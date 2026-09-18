@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const storySection = document.querySelector('.story');
   const frames = document.querySelectorAll('.story__frame');
   const stageItems = document.querySelectorAll('.stage-item');
-  const progressFill = document.getElementById('story-progress');
+  const stageRail = document.querySelector('.story__stage-rail');
   const captionEl = document.getElementById('story-caption');
 
   const espressoFill = document.querySelector('.espresso-fill');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       frames.forEach((frame, i) => frame.classList.toggle('is-active', i === activeStage));
       stageItems.forEach((item, i) => item.classList.toggle('is-active', i === activeStage));
-      progressFill.style.height = `${progress * 100}%`;
+      if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
       captionEl.textContent = captions[activeStage];
 
       // Stage 2 — espresso shot filling the glass
