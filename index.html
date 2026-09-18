@@ -103,7 +103,7 @@
         <p class="story__intro-copy">Scroll to follow one cup from the first bean to the final pour.</p>
       </div>
 
-      <ol class="story__stage-list" id="stage-list">
+      <ol class="story__stage-rail" id="stage-list">
         <li class="stage-item is-active" data-stage="0"><span class="stage-item__num">01</span><span class="stage-item__label">Sourced &amp; Roasted</span></li>
         <li class="stage-item" data-stage="1"><span class="stage-item__num">02</span><span class="stage-item__label">Freshly Ground</span></li>
         <li class="stage-item" data-stage="2"><span class="stage-item__num">03</span><span class="stage-item__label">Pulled to Perfection</span></li>
@@ -113,17 +113,15 @@
       </ol>
 
       <div class="story__visual">
-        <div class="story__progress-track" aria-hidden="true"><div class="story__progress-fill" id="story-progress"></div></div>
 
         <!-- STAGE 0 — BEANS -->
-        <svg class="story__frame is-active" data-stage="0" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <path d="M60 300c-14-60 10-140 90-160 30 60-4 140-70 168-8-2-16-4-20-8z" fill="none" stroke="var(--brown)" stroke-width="2"/>
+        <svg class="story__frame is-active" data-stage="0" viewBox="60 30 260 290" xmlns="http://www.w3.org/2000/svg">
           <g class="bean-fall">
-            <g class="bean" transform="translate(150 90) rotate(-15)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="var(--brown-dark)"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none"/></g>
-            <g class="bean" transform="translate(230 60) rotate(20)"><ellipse cx="0" cy="0" rx="15" ry="10" fill="var(--brown-dark)"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
-            <g class="bean" transform="translate(280 140) rotate(-40)"><ellipse cx="0" cy="0" rx="16" ry="10.5" fill="var(--brown-dark)"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
+            <g transform="translate(150 90) rotate(-15)"><g class="bean"><ellipse cx="0" cy="0" rx="17" ry="11" fill="var(--brown)"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none"/></g></g>
+            <g transform="translate(230 60) rotate(20)"><g class="bean"><ellipse cx="0" cy="0" rx="15" ry="10" fill="var(--brown)"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g></g>
+            <g transform="translate(280 140) rotate(-40)"><g class="bean"><ellipse cx="0" cy="0" rx="16" ry="10.5" fill="var(--brown)"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g></g>
           </g>
-          <g fill="var(--brown-dark)">
+          <g fill="var(--brown)">
             <g transform="translate(95 260) rotate(10)"><ellipse rx="15" ry="9.5"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
             <g transform="translate(130 285) rotate(-25)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-5 11-5 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
             <g transform="translate(170 265) rotate(15)"><ellipse rx="16" ry="10"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
@@ -132,7 +130,7 @@
         </svg>
 
         <!-- STAGE 1 — GRINDER -->
-        <svg class="story__frame" data-stage="1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="story__frame" data-stage="1" viewBox="145 38 110 310" xmlns="http://www.w3.org/2000/svg">
           <rect x="160" y="60" width="80" height="46" rx="8" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
           <path d="M172 106l10 130h36l10-130" fill="none" stroke="var(--olive-dark)" stroke-width="2" stroke-linejoin="round"/>
           <path d="M182 236h36l-10 40h-16z" fill="var(--brown)" stroke="var(--olive-dark)" stroke-width="2" stroke-linejoin="round"/>
@@ -148,13 +146,13 @@
             <path d="M175 78c8-10 42-10 50 0"/>
             <path d="M180 90c6-6 34-6 40 0"/>
           </g>
-          <g class="bean" transform="translate(178 66) rotate(-10)"><ellipse rx="9" ry="6" fill="var(--brown-dark)"/></g>
-          <g class="bean" transform="translate(205 60) rotate(15)"><ellipse rx="8" ry="5.5" fill="var(--brown-dark)"/></g>
-          <g class="bean" transform="translate(224 70) rotate(-20)"><ellipse rx="9" ry="6" fill="var(--brown-dark)"/></g>
+          <g class="bean" transform="translate(178 66) rotate(-10)"><ellipse rx="9" ry="6" fill="var(--brown)"/></g>
+          <g class="bean" transform="translate(205 60) rotate(15)"><ellipse rx="8" ry="5.5" fill="var(--brown)"/></g>
+          <g class="bean" transform="translate(224 70) rotate(-20)"><ellipse rx="9" ry="6" fill="var(--brown)"/></g>
         </svg>
 
         <!-- STAGE 2 — ESPRESSO PULL -->
-        <svg class="story__frame" data-stage="2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="story__frame" data-stage="2" viewBox="120 50 160 306" xmlns="http://www.w3.org/2000/svg">
           <path d="M140 70h120v34c0 12-10 22-22 22h-76c-12 0-22-10-22-22V70z" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
           <rect x="188" y="126" width="24" height="14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
           <path d="M182 140l-18 28h72l-18-28z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
@@ -171,7 +169,7 @@
         </svg>
 
         <!-- STAGE 3 — INTO MUG -->
-        <svg class="story__frame" data-stage="3" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="story__frame" data-stage="3" viewBox="132 102 170 260" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(0 -30)">
             <path d="M172 150l-14 22h58l-14-22z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
             <line x1="168" y1="172" x2="168" y2="210" class="pour-stream" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
@@ -184,7 +182,7 @@
         </svg>
 
         <!-- STAGE 4 — STEAMED MILK -->
-        <svg class="story__frame" data-stage="4" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="story__frame" data-stage="4" viewBox="134 60 138 194" xmlns="http://www.w3.org/2000/svg">
           <path d="M150 130l70-14 8 96c1 14-10 26-24 26h-30c-14 0-24-12-23-26l-1-82z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2" stroke-linejoin="round"/>
           <path d="M228 150c18-2 30 8 28 22-2 12-16 18-30 14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
           <line x1="150" y1="158" x2="186" y2="151" stroke="var(--olive-dark)" stroke-width="1.6"/>
@@ -199,7 +197,7 @@
         </svg>
 
         <!-- STAGE 5 — LATTE ART / SIGNATURE POUR -->
-        <svg class="story__frame" data-stage="5" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg class="story__frame" data-stage="5" viewBox="122 115 194 230" xmlns="http://www.w3.org/2000/svg">
           <path d="M140 190h120v104c0 18-15 33-33 33h-54c-18 0-33-15-33-33V190z" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="2.2"/>
           <path d="M260 210c24-4 38 10 38 28s-16 32-40 28" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
           <ellipse cx="200" cy="192" rx="60" ry="16" fill="var(--brown-dark)"/>
@@ -216,7 +214,9 @@
         </svg>
       </div>
 
-      <p class="story__caption" id="story-caption">We start with beans sourced with care and roasted for warmth, not bitterness.</p>
+      <div class="story__caption">
+        <p class="story__caption-text" id="story-caption">We start with beans sourced with care and roasted for warmth, not bitterness.</p>
+      </div>
     </div>
   </section>
 
