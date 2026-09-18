@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Olive Branch — Coffee &amp; Café · Hillsboro, TX</title>
+<meta name="description" content="The Olive Branch is a coffee house and café in Hillsboro, Texas, serving espresso, crêpes, and paninis in a space built for community, study, and connection.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Olive Branch — Coffee &amp; Café">
+<meta property="og:description" content="Coffee, crêpes &amp; community in the heart of Hillsboro, Texas.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:,">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="top">
+  <div class="site-header__inner">
+    <a href="#top" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.25"/>
+          <path d="M14 30c4-10 12-16 20-14-2 8-8 15-18 17-1-1-2-2-2-3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 16c3 2 5 5 4 9-3-1-6-3-7-6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">The Olive Branch</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">The Space</a>
+      <a href="#community">Stay in the Loop</a>
+      <a href="#visit" class="main-nav__cta">Visit Us</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="eyebrow">Hillsboro, Texas</p>
+
+      <div class="hero__mark" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="110" cy="110" r="104" stroke="currentColor" stroke-width="1.25" opacity="0.7"/>
+          <circle cx="110" cy="110" r="94" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+          <g transform="translate(58 46)">
+            <path d="M6 46C18 18 44 2 74 6 68 34 46 58 12 62 8 58 4 52 6 46Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 10c10 6 16 16 12 30-10-2-20-10-22-22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse cx="88" cy="4" rx="6" ry="3.4" transform="rotate(28 88 4)" fill="currentColor" opacity="0.85"/>
+            <ellipse cx="98" cy="14" rx="5.5" ry="3" transform="rotate(20 98 14)" fill="currentColor" opacity="0.7"/>
+            <ellipse cx="78" cy="-4" rx="5" ry="2.8" transform="rotate(35 78 -4)" fill="currentColor" opacity="0.7"/>
+          </g>
+        </svg>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="script">the</span>
+        <span class="serif">Olive Branch</span>
+      </h1>
+      <p class="hero__tagline">Rooted in Faith. Serving Our Community.</p>
+      <p class="hero__sub">Coffee, crêpes &amp; paninis made with care — in a space built for lingering. Come study, meet, worship, or just be still a while.</p>
+
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--solid">See the Menu</a>
+        <a href="#visit" class="btn btn--outline">Plan a Visit</a>
+      </div>
+    </div>
+
+    <a href="#story" class="scroll-cue" aria-label="Scroll to watch us pour">
+      <span>Watch us pour</span>
+      <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.1"/>
+        <circle class="scroll-cue__dot" cx="7" cy="7" r="1.6" fill="currentColor"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============ STORY / SCROLLYTELLING LATTE SEQUENCE ============ -->
+  <section class="story" id="story">
+    <div class="story__pin">
+
+      <div class="story__intro">
+        <p class="eyebrow">From Bean to Branch</p>
+        <h2>Every Latte Has a Story</h2>
+        <p class="story__intro-copy">Scroll to follow one cup from the first bean to the final pour.</p>
+      </div>
+
+      <ol class="story__stage-list" id="stage-list">
+        <li class="stage-item is-active" data-stage="0"><span class="stage-item__num">01</span><span class="stage-item__label">Sourced &amp; Roasted</span></li>
+        <li class="stage-item" data-stage="1"><span class="stage-item__num">02</span><span class="stage-item__label">Freshly Ground</span></li>
+        <li class="stage-item" data-stage="2"><span class="stage-item__num">03</span><span class="stage-item__label">Pulled to Perfection</span></li>
+        <li class="stage-item" data-stage="3"><span class="stage-item__num">04</span><span class="stage-item__label">Poured with Purpose</span></li>
+        <li class="stage-item" data-stage="4"><span class="stage-item__num">05</span><span class="stage-item__label">Silky Steamed Milk</span></li>
+        <li class="stage-item" data-stage="5"><span class="stage-item__num">06</span><span class="stage-item__label">Our Signature Pour</span></li>
+      </ol>
+
+      <div class="story__visual">
+        <div class="story__progress-track" aria-hidden="true"><div class="story__progress-fill" id="story-progress"></div></div>
+
+        <!-- STAGE 0 — BEANS -->
+        <svg class="story__frame is-active" data-stage="0" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 300c-14-60 10-140 90-160 30 60-4 140-70 168-8-2-16-4-20-8z" fill="none" stroke="var(--brown)" stroke-width="2"/>
+          <g class="bean-fall">
+            <g class="bean" transform="translate(150 90) rotate(-15)"><ellipse cx="0" cy="0" rx="17" ry="11" fill="var(--brown-dark)"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none"/></g>
+            <g class="bean" transform="translate(230 60) rotate(20)"><ellipse cx="0" cy="0" rx="15" ry="10" fill="var(--brown-dark)"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
+            <g class="bean" transform="translate(280 140) rotate(-40)"><ellipse cx="0" cy="0" rx="16" ry="10.5" fill="var(--brown-dark)"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
+          </g>
+          <g fill="var(--brown-dark)">
+            <g transform="translate(95 260) rotate(10)"><ellipse rx="15" ry="9.5"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
+            <g transform="translate(130 285) rotate(-25)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-5 11-5 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
+            <g transform="translate(170 265) rotate(15)"><ellipse rx="16" ry="10"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
+            <g transform="translate(115 235) rotate(-5)"><ellipse rx="13" ry="8.5"/><path d="M-7 0c3-4 10-4 13 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
+          </g>
+        </svg>
+
+        <!-- STAGE 1 — GRINDER -->
+        <svg class="story__frame" data-stage="1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <rect x="160" y="60" width="80" height="46" rx="8" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
+          <path d="M172 106l10 130h36l10-130" fill="none" stroke="var(--olive-dark)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M182 236h36l-10 40h-16z" fill="var(--brown)" stroke="var(--olive-dark)" stroke-width="2" stroke-linejoin="round"/>
+          <rect x="176" y="278" width="48" height="60" rx="4" fill="none" stroke="var(--brown)" stroke-width="2"/>
+          <g class="grind-fall">
+            <circle cx="200" cy="300" r="2.4" fill="var(--brown-dark)"/>
+            <circle cx="192" cy="312" r="2" fill="var(--brown-dark)"/>
+            <circle cx="210" cy="316" r="2.2" fill="var(--brown-dark)"/>
+            <circle cx="200" cy="326" r="2" fill="var(--brown-dark)"/>
+            <circle cx="188" cy="300" r="1.8" fill="var(--brown-dark)"/>
+          </g>
+          <g class="grind-swirl" stroke="var(--olive)" stroke-width="1.4" fill="none" stroke-linecap="round">
+            <path d="M175 78c8-10 42-10 50 0"/>
+            <path d="M180 90c6-6 34-6 40 0"/>
+          </g>
+          <g class="bean" transform="translate(178 66) rotate(-10)"><ellipse rx="9" ry="6" fill="var(--brown-dark)"/></g>
+          <g class="bean" transform="translate(205 60) rotate(15)"><ellipse rx="8" ry="5.5" fill="var(--brown-dark)"/></g>
+          <g class="bean" transform="translate(224 70) rotate(-20)"><ellipse rx="9" ry="6" fill="var(--brown-dark)"/></g>
+        </svg>
+
+        <!-- STAGE 2 — ESPRESSO PULL -->
+        <svg class="story__frame" data-stage="2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M140 70h120v34c0 12-10 22-22 22h-76c-12 0-22-10-22-22V70z" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
+          <rect x="188" y="126" width="24" height="14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
+          <path d="M182 140l-18 28h72l-18-28z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
+          <g class="espresso-stream">
+            <line x1="176" y1="168" x2="176" y2="270" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="218" y1="168" x2="218" y2="270" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <path d="M160 272h74v46c0 10-8 18-18 18h-38c-10 0-18-8-18-18v-46z" fill="none" stroke="var(--brown)" stroke-width="2"/>
+          <rect class="espresso-fill" x="163" y="300" width="68" height="0" fill="var(--brown-dark)" opacity="0.9"/>
+          <g class="crema-swirl" stroke="var(--gold)" stroke-width="1.1" fill="none" opacity="0" stroke-linecap="round">
+            <path d="M172 300c14-6 28-6 42 0"/>
+            <path d="M178 306c10-4 20-4 30 0"/>
+          </g>
+        </svg>
+
+        <!-- STAGE 3 — INTO MUG -->
+        <svg class="story__frame" data-stage="3" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0 -30)">
+            <path d="M172 150l-14 22h58l-14-22z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="168" y1="172" x2="168" y2="210" class="pour-stream" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="200" y1="172" x2="200" y2="210" class="pour-stream" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <path d="M150 210h100v104c0 16-13 29-29 29h-42c-16 0-29-13-29-29V210z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
+          <path d="M250 232c22-4 34 10 34 26s-14 30-36 26" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
+          <clipPath id="mugClip"><path d="M150 210h100v104c0 16-13 29-29 29h-42c-16 0-29-13-29-29V210z"/></clipPath>
+          <rect class="mug-fill" x="150" y="313" width="100" height="0" fill="var(--brown-dark)" clip-path="url(#mugClip)"/>
+        </svg>
+
+        <!-- STAGE 4 — STEAMED MILK -->
+        <svg class="story__frame" data-stage="4" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M150 130l70-14 8 96c1 14-10 26-24 26h-30c-14 0-24-12-23-26l-1-82z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M228 150c18-2 30 8 28 22-2 12-16 18-30 14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
+          <line x1="150" y1="158" x2="186" y2="151" stroke="var(--olive-dark)" stroke-width="1.6"/>
+          <g class="steam" stroke="var(--olive-light)" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0">
+            <path d="M170 110c-8-10 8-16 0-28"/>
+            <path d="M190 104c-8-10 8-16 0-28"/>
+            <path d="M210 110c-8-10 8-16 0-28"/>
+          </g>
+          <g class="milk-shimmer" opacity="0">
+            <ellipse cx="185" cy="150" rx="26" ry="8" fill="var(--cream)"/>
+          </g>
+        </svg>
+
+        <!-- STAGE 5 — LATTE ART / SIGNATURE POUR -->
+        <svg class="story__frame" data-stage="5" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M140 190h120v104c0 18-15 33-33 33h-54c-18 0-33-15-33-33V190z" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="2.2"/>
+          <path d="M260 210c24-4 38 10 38 28s-16 32-40 28" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
+          <ellipse cx="200" cy="192" rx="60" ry="16" fill="var(--brown-dark)"/>
+          <g class="latte-art" fill="none" stroke="var(--cream)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path class="latte-art__stem" d="M200 250c0-24 0-42 0-58" pathLength="100" />
+            <path class="latte-art__leaf latte-art__leaf--l1" d="M200 236c-16-4-26-14-26-26 14 2 24 12 26 26z" pathLength="100"/>
+            <path class="latte-art__leaf latte-art__leaf--r1" d="M200 220c16-4 26-14 26-26-14 2-24 12-26 26z" pathLength="100"/>
+            <path class="latte-art__leaf latte-art__leaf--l2" d="M200 204c-14-3-22-12-22-22 12 2 20 10 22 22z" pathLength="100"/>
+            <path class="latte-art__leaf latte-art__leaf--r2" d="M200 200c14-3 22-12 22-22-12 2-20 10-22 22z" pathLength="100"/>
+          </g>
+          <g class="latte-art-dove" opacity="0" transform="translate(150 130) scale(0.6)">
+            <path d="M6 46C18 18 44 2 74 6 68 34 46 58 12 62 8 58 4 52 6 46Z" fill="none" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="story__caption" id="story-caption">We start with beans sourced with care and roasted for warmth, not bitterness.</p>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <p class="eyebrow">What We're Serving</p>
+      <h2>A Menu Worth Lingering Over</h2>
+      <p class="section-lede">Coffee and espresso drinks made in-house, crêpes and paninis made to order, and a menu that changes with the season — so there's always something new to try.</p>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M10 18h22v16c0 6-5 11-11 11h-0c-6 0-11-5-11-11V18z" stroke="currentColor" stroke-width="2"/><path d="M32 20c6-1 10 3 10 8s-5 9-11 8" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          <h3>Coffee &amp; Espresso</h3>
+          <p>Lattes, cappuccinos, cold brew, and our signature Olive Branch Latte — plus drip coffee for the purists.</p>
+        </div>
+
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="2"/><path d="M24 9c4 6 4 21 0 30" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <h3>Crêpes</h3>
+          <p>Sweet or savory, folded to order — breakfast, lunch, or dessert, any time of day.</p>
+        </div>
+
+        <div class="menu-card">
+          <span class="menu-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="16" width="32" height="16" rx="4" stroke="currentColor" stroke-width="2"/><path d="M13 24h22" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <h3>Paninis</h3>
+          <p>Pressed hot and hearty, with a rotating lineup of seasonal fillings.</p>
+        </div>
+
+        <div class="menu-card menu-card--accent">
+          <h3>This Month's Menu</h3>
+          <p>New flavors, every month. Follow along by email or social so you never miss a limited-time favorite.</p>
+          <a href="#community" class="menu-card__link">See what's new →</a>
+        </div>
+
+        <div class="menu-card menu-card--accent">
+          <h3>Seasonal Sips</h3>
+          <p>Pumpkin in October, peppermint in December, something bright every spring — our seasonal menu follows the calendar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE SPACE ============ -->
+  <section class="space" id="space">
+    <div class="section-inner">
+      <p class="eyebrow">More Than a Coffee Shop</p>
+      <h2>A Place to Stay Awhile</h2>
+      <p class="section-lede">Plenty of room to spread out — whether you're here for an hour or an afternoon.</p>
+
+      <div class="space-grid">
+        <div class="space-card">
+          <h3>Conference Room</h3>
+          <p>Book our private meeting room for luncheons, team meetings, or events.</p>
+        </div>
+        <div class="space-card">
+          <h3>Indoor Seating</h3>
+          <p>Cozy tables and soft seating, perfect for studying or settling in with a good book.</p>
+        </div>
+        <div class="space-card">
+          <h3>Outdoor Patio</h3>
+          <p>Fresh air and shade for slower mornings and long conversations.</p>
+        </div>
+        <div class="space-card">
+          <h3>Community Tables</h3>
+          <p>Built for Bible studies, friend hangouts, and everything in between.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMUNITY / NEWSLETTER ============ -->
+  <section class="community" id="community">
+    <div class="section-inner section-inner--narrow">
+      <p class="eyebrow">Stay in the Loop</p>
+      <h2>Never Miss What's New</h2>
+      <p class="section-lede">Our menu changes every month. Join our email list or follow along on social so you're always the first to know.</p>
+
+      <!-- NOTE for site owner: wire this form up to your email provider (Mailchimp, Flodesk, etc.) -->
+      <form class="signup-form" id="signup-form">
+        <label for="signup-email" class="sr-only">Email address</label>
+        <input type="email" id="signup-email" name="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn--solid">Join the List</button>
+      </form>
+      <p class="signup-note" id="signup-note" role="status" aria-live="polite"></p>
+
+      <!-- NOTE for site owner: replace # with your real Instagram / Facebook URLs -->
+      <div class="social-row">
+        <a href="#" class="social-icon" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Follow us on Facebook">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 8h-2a2 2 0 00-2 2v2H9v3h2v6h3v-6h2.2l.8-3H14v-1.6c0-.5.3-.9.9-.9H16V8h-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT / FOOTER ============ -->
+  <section class="visit" id="visit">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--light">Come See Us</p>
+      <h2 class="visit__title">Visit The Olive Branch</h2>
+
+      <div class="visit-grid">
+        <div class="visit-block">
+          <h3>Location</h3>
+          <!-- NOTE for site owner: replace with your exact street address -->
+          <p>[Street Address]<br>Hillsboro, TX 76645</p>
+        </div>
+        <div class="visit-block">
+          <h3>Hours</h3>
+          <!-- NOTE for site owner: confirm final hours -->
+          <p>Mon–Sat: 7am – 6pm<br>Sun: Closed</p>
+        </div>
+        <div class="visit-block">
+          <h3>Contact</h3>
+          <!-- NOTE for site owner: replace with your real phone / email -->
+          <p>(254) 555-0123<br>hello@theolivebranchhillsboro.com</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.25"/><path d="M14 30c4-10 12-16 20-14-2 8-8 15-18 17-1-1-2-2-2-3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand__text">The Olive Branch</span>
+        </span>
+        <p class="site-footer__copy">© 2026 The Olive Branch Coffee &amp; Café · Hillsboro, Texas</p>
+      </div>
+    </footer>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
