@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Story: bean-to-latte scrollytelling ---------- */
   const storySection = document.querySelector('.story');
-  const frames = Array.from(document.querySelectorAll('.story__frame'));
-  const frameMedia = frames.map(f => f.querySelector('.story__frame__img') || f);
+  const storyVisual = document.querySelector('.story__visual');
+  const mural = document.getElementById('story-mural');
   const stageItems = document.querySelectorAll('.stage-item');
   const stageRail = document.querySelector('.story__stage-rail');
   const captionEl = document.getElementById('story-caption');
@@ -72,60 +72,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (!storySection) return;
+  if (!storySection || !mural) return;
 
-  const STAGE_COUNT = frames.length;
-  const N = STAGE_COUNT - 1;
+  const STAGE_COUNT = captions.length;
+  const MURAL_VB_HEIGHT = 2400; // matches the SVG's viewBox height
 
   if (reduceMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    // Static fallback: show the final pour, full caption, skip the scrub animation.
+    // Static fallback: pan straight to the final pour, full caption, no scrub.
     storySection.classList.add('story--static');
-    frames.forEach((f, i) => { f.style.opacity = i === frames.length - 1 ? '1' : '0'; });
     stageItems.forEach((it, i) => it.classList.toggle('is-active', i === stageItems.length - 1));
     captionEl.textContent = captions[captions.length - 1];
+    requestAnimationFrame(() => {
+      const pxPerUnit = mural.getBoundingClientRect().width / 400;
+      mural.style.transform = `translateY(${-2000 * pxPerUnit}px)`;
+    });
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Each stage's photo is a full-bleed "frame" in one continuous downward pour:
-  // frames cross-dissolve into each other (linear opacity ramp centered on each
-  // stage) rather than hard-cutting, and every frame drifts slowly downward as
-  // its moment passes — so the whole sequence reads as one flowing shot instead
-  // of a slideshow of discrete images.
-  const DRIFT_PERCENT = 6;   // how far a frame drifts vertically across its own span
-  const ZOOM_AMOUNT = 0.06;  // subtle continuous Ken Burns push-in
+  // The whole sequence is ONE tall illustration (a vertical "mural" — beans at
+  // the top, latte art at the bottom, connected by drips/chutes the whole way
+  // down). Scrolling simply pans the viewport down through it, so the motion
+  // is genuinely linear/continuous rather than a slideshow of separate scenes.
+  let maxTranslate = 0;
+
+  function measure() {
+    const muralHeight = mural.getBoundingClientRect().height;
+    const viewportHeight = storyVisual.getBoundingClientRect().height;
+    maxTranslate = Math.max(0, muralHeight - viewportHeight);
+  }
 
   function updateStory(progress) {
-    // Map progress 0..1 so stage 0 is fully centered at progress=0 and the
-    // last stage is fully centered at progress=1, with even crossfades between.
-    const stageProgress = progress * N + 0.5;
-    const captionStage = Math.max(0, Math.min(N, Math.round(stageProgress - 0.5)));
+    const captionStage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(progress * STAGE_COUNT)));
 
     stageItems.forEach((item, i) => item.classList.toggle('is-active', i === captionStage));
     if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
     captionEl.textContent = captions[captionStage];
 
-    frames.forEach((frame, i) => {
-      const center = i + 0.5;
-      const dist = stageProgress - center; // -1..1 across this frame's visible span
-      const clamped = Math.max(-1, Math.min(1, dist));
-      const opacity = Math.max(0, 1 - Math.abs(dist));
-
-      frame.style.opacity = opacity.toFixed(3);
-
-      const drift = clamped * DRIFT_PERCENT;
-      const scale = 1 + ZOOM_AMOUNT * (1 - Math.abs(clamped));
-      frameMedia[i].style.transform = `scale(${scale.toFixed(3)}) translateY(${drift.toFixed(2)}%)`;
-    });
+    mural.style.transform = `translateY(${(-progress * maxTranslate).toFixed(1)}px)`;
   }
+
+  measure();
 
   ScrollTrigger.create({
     trigger: storySection,
     start: 'top top',
     end: 'bottom bottom',
     scrub: 0.4,
-    onUpdate: (self) => updateStory(self.progress)
+    onUpdate: (self) => updateStory(self.progress),
+    onRefresh: () => measure()
+  });
+
+  window.addEventListener('resize', () => {
+    measure();
+    ScrollTrigger.refresh();
   });
 
   updateStory(0);
