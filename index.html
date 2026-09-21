@@ -113,184 +113,132 @@
       </ol>
 
       <div class="story__visual">
-        <svg class="story__mural" id="story-mural" viewBox="0 0 400 2400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
-          <defs>
-            <radialGradient id="gBean" cx="35%" cy="28%" r="80%">
-              <stop offset="0%" stop-color="#9c6a42"/>
-              <stop offset="55%" stop-color="#4a2f1c"/>
-              <stop offset="100%" stop-color="#241509"/>
-            </radialGradient>
-            <linearGradient id="gMetal" x1="0%" y1="0%" x2="100%" y2="10%">
-              <stop offset="0%" stop-color="#0c0906"/>
-              <stop offset="30%" stop-color="#332a20"/>
-              <stop offset="48%" stop-color="#6b5a44"/>
-              <stop offset="62%" stop-color="#2a2118"/>
-              <stop offset="100%" stop-color="#0c0906"/>
-            </linearGradient>
-            <linearGradient id="gSteel" x1="0%" y1="0%" x2="100%" y2="6%">
-              <stop offset="0%" stop-color="#171310"/>
-              <stop offset="24%" stop-color="#786d5c"/>
-              <stop offset="45%" stop-color="#e8e0cd"/>
-              <stop offset="60%" stop-color="#786d5c"/>
-              <stop offset="100%" stop-color="#171310"/>
-            </linearGradient>
-            <linearGradient id="gCeramic" x1="10%" y1="0%" x2="95%" y2="100%">
-              <stop offset="0%" stop-color="#3f4c2d"/>
-              <stop offset="38%" stop-color="#7E9459"/>
-              <stop offset="58%" stop-color="#B9C79C"/>
-              <stop offset="75%" stop-color="#6a7d49"/>
-              <stop offset="100%" stop-color="#333f24"/>
-            </linearGradient>
-            <linearGradient id="gCoffee" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#CFA05A"/>
-              <stop offset="14%" stop-color="#6b4527"/>
-              <stop offset="100%" stop-color="#20120a"/>
-            </linearGradient>
-            <linearGradient id="gGlass" x1="0%" y1="0%" x2="100%" y2="8%">
-              <stop offset="0%" stop-color="rgba(244,235,220,0.03)"/>
-              <stop offset="38%" stop-color="rgba(244,235,220,0.05)"/>
-              <stop offset="50%" stop-color="rgba(244,235,220,0.4)"/>
-              <stop offset="62%" stop-color="rgba(244,235,220,0.05)"/>
-              <stop offset="100%" stop-color="rgba(244,235,220,0.02)"/>
-            </linearGradient>
-            <radialGradient id="gSpot" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="rgba(207,160,90,0.4)"/>
-              <stop offset="100%" stop-color="rgba(207,160,90,0)"/>
-            </radialGradient>
-            <filter id="blurSoft" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="7"/>
-            </filter>
-            <filter id="blurGlow" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="30"/>
-            </filter>
-            <clipPath id="mugClipA"><path d="M152 1288 L248 1288 L248 1380 C248 1400 232 1416 212 1416 L188 1416 C168 1416 152 1400 152 1380 Z"/></clipPath>
-            <clipPath id="mugClipB"><path d="M152 2150 L248 2150 L248 2242 C248 2262 232 2278 212 2278 L188 2278 C168 2278 152 2262 152 2242 Z"/></clipPath>
-            <clipPath id="glassClip"><path d="M166 1002 L234 1002 L227 1050 C226 1059 219 1066 210 1066 L190 1066 C181 1066 174 1059 173 1050 Z"/></clipPath>
-          </defs>
 
-          <!-- unifying spine connecting every stage into one apparatus -->
-          <line x1="200" y1="0" x2="200" y2="2400" stroke="var(--olive)" stroke-width="1" stroke-dasharray="2 10" opacity="0.14"/>
+        <!-- STAGE 0 — BEANS: three chunky beans bouncing in place -->
+        <div class="story__frame" data-stage="0">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(150 210)">
+              <g class="bounce-a">
+              <g transform="rotate(-14)">
+                <ellipse rx="58" ry="38" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7"/>
+                <path d="M-32 0c14-20 50-20 64 0" stroke="var(--cream)" stroke-width="7" fill="none" stroke-linecap="round"/>
+              </g>
+              </g>
+            </g>
+            <g transform="translate(262 165)">
+              <g class="bounce-b">
+              <g transform="rotate(18)">
+                <ellipse rx="48" ry="32" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="6"/>
+                <path d="M-27 0c12-16 42-16 54 0" stroke="var(--cream)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              </g>
+              </g>
+            </g>
+            <g transform="translate(206 285)">
+              <g class="bounce-c">
+              <g transform="rotate(-6)">
+                <ellipse rx="50" ry="33" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="6"/>
+                <path d="M-28 0c12-17 44-17 56 0" stroke="var(--cream)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              </g>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-          <!-- ================= BAND 0 — BEANS (y 0-400) ================= -->
-          <ellipse cx="195" cy="220" rx="140" ry="150" fill="url(#gSpot)" filter="url(#blurGlow)"/>
-          <g fill="url(#gBean)">
-            <g transform="translate(150 150) rotate(-15)"><ellipse rx="17" ry="11"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none" opacity="0.8"/></g>
-            <g transform="translate(230 130) rotate(20)"><ellipse rx="15" ry="10"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none" opacity="0.8"/></g>
-            <g transform="translate(270 190) rotate(-35)"><ellipse rx="16" ry="10.5"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none" opacity="0.8"/></g>
-            <g transform="translate(120 220) rotate(10)"><ellipse rx="15" ry="9.5"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none" opacity="0.8"/></g>
-            <g transform="translate(195 205) rotate(-10)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-5 11-5 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
-            <g transform="translate(250 260) rotate(25)"><ellipse rx="16" ry="10"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none" opacity="0.8"/></g>
-            <g transform="translate(160 295) rotate(-20)"><ellipse rx="13" ry="8.5"/><path d="M-7 0c3-4 10-4 13 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
-            <g transform="translate(220 325) rotate(15)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-4 11-4 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
-          </g>
-          <path d="M130 350 L193 400" stroke="var(--olive)" stroke-width="1.5" opacity="0.6"/>
-          <path d="M270 350 L207 400" stroke="var(--olive)" stroke-width="1.5" opacity="0.6"/>
+        <!-- STAGE 1 — GRINDER: chunky friendly grinder shaking with effort -->
+        <div class="story__frame" data-stage="1">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0 -30)">
+              <g class="wobble-grinder" transform-origin="200 360">
+                <path d="M130 70 C130 50 270 50 270 70 L250 170 C248 182 152 182 150 170 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
+                <rect x="160" y="178" width="80" height="130" rx="16" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7"/>
+                <rect x="156" y="228" width="88" height="24" rx="8" fill="var(--gold)" stroke="var(--ink-2)" stroke-width="6"/>
+                <path d="M172 308 L228 308 L216 348 L184 348 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="6" stroke-linejoin="round"/>
+              </g>
+              <g class="pop-grounds">
+                <circle class="pop-1" cx="170" cy="360" r="7" fill="var(--brown-dark)" transform-origin="170 360"/>
+                <circle class="pop-2" cx="200" cy="366" r="8" fill="var(--brown-dark)" transform-origin="200 366"/>
+                <circle class="pop-3" cx="230" cy="360" r="7" fill="var(--brown-dark)" transform-origin="230 360"/>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-          <!-- ================= BAND 1 — GROUND FRESH (y 400-800) ================= -->
-          <path d="M168 404 C168 396 176 391 186 391 L214 391 C224 391 232 396 232 404 L224 460 C223 466 216 470 208 470 L192 470 C184 470 177 466 176 460 Z" fill="url(#gGlass)" stroke="var(--cream)" stroke-width="1.6" opacity="0.92"/>
-          <g fill="url(#gBean)">
-            <g transform="translate(184 420) rotate(-10)"><ellipse rx="9" ry="6"/></g>
-            <g transform="translate(211 414) rotate(15)"><ellipse rx="8" ry="5.5"/></g>
-            <g transform="translate(198 445) rotate(-20)"><ellipse rx="9" ry="6"/></g>
-          </g>
-          <path d="M177 470 L223 470 L217 528 L221 528 L221 536 L179 536 L179 528 L183 528 Z" fill="url(#gMetal)" stroke="var(--olive-dark)" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M183 536 L217 536 L213 606 C213 616 187 616 187 606 Z" fill="url(#gMetal)" stroke="var(--olive-dark)" stroke-width="1.8" stroke-linejoin="round"/>
-          <rect x="181" y="538" width="38" height="7" rx="2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="0.8"/>
-          <path d="M190 606 L210 606 L206 632 L194 632 Z" fill="url(#gMetal)" stroke="var(--brown)" stroke-width="1.6"/>
-          <path d="M172 634 C172 650 150 658 150 680 C150 706 250 706 250 680 C250 658 228 650 228 634 Z" fill="url(#gMetal)" stroke="var(--brown)" stroke-width="1.8"/>
-          <g fill="var(--brown-dark)">
-            <circle cx="200" cy="655" r="2.6"/>
-            <circle cx="190" cy="665" r="2.2"/>
-            <circle cx="212" cy="668" r="2.4"/>
-            <circle cx="198" cy="678" r="2"/>
-            <circle cx="185" cy="672" r="2.2"/>
-            <circle cx="208" cy="682" r="2"/>
-          </g>
-          <g fill="var(--brown-dark)" opacity="0.7">
-            <circle cx="196" cy="720" r="1.8"/>
-            <circle cx="206" cy="745" r="1.6"/>
-            <circle cx="198" cy="775" r="1.5"/>
-          </g>
+        <!-- STAGE 2 — ESPRESSO: bold group head with a stretchy jelly drip -->
+        <div class="story__frame" data-stage="2">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0 -55)">
+              <path d="M110 50 L290 50 L290 108 C290 130 270 148 246 148 L154 148 C130 148 110 130 110 108 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="7"/>
+              <circle cx="158" cy="90" r="9" fill="var(--ink-2)"/>
+              <circle cx="242" cy="90" r="9" fill="var(--ink-2)"/>
+              <path d="M150 148 L250 148 L228 200 L172 200 Z" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
+              <g class="drip-stretch" transform-origin="200 200">
+                <rect x="188" y="200" width="24" height="90" rx="12" fill="var(--brown-dark)"/>
+              </g>
+              <g class="bob-cup" transform-origin="200 380">
+                <path d="M150 300 L250 300 L242 370 C240 388 224 400 206 400 L194 400 C176 400 160 388 158 370 Z" fill="var(--cream)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
+                <path d="M158 340 L242 340 L237 372 C236 386 222 396 208 396 L192 396 C178 396 164 386 163 372 Z" fill="var(--gold)"/>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-          <!-- ================= BAND 2 — PULLED TO PERFECTION (y 800-1200) ================= -->
-          <ellipse cx="200" cy="960" rx="150" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)"/>
-          <path d="M140 800 L260 800 L260 840 C260 858 246 872 228 872 L172 872 C154 872 140 858 140 840 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="1.8"/>
-          <circle cx="178" cy="826" r="4.2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="1"/>
-          <circle cx="222" cy="826" r="4.2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="1"/>
-          <path d="M180 872 L220 872 L212 904 L188 904 Z" fill="url(#gSteel)" stroke="var(--brown)" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M212 886 L262 880 C272 879 273 893 263 894 L212 898 Z" fill="url(#gSteel)" stroke="var(--brown-dark)" stroke-width="1.2"/>
-          <line x1="176" y1="900" x2="176" y2="1000" stroke="var(--brown-dark)" stroke-width="2.6" stroke-linecap="round"/>
-          <line x1="218" y1="900" x2="218" y2="1000" stroke="var(--brown-dark)" stroke-width="2.6" stroke-linecap="round"/>
-          <line x1="177" y1="905" x2="177" y2="995" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/>
-          <line x1="219" y1="905" x2="219" y2="995" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/>
-          <path d="M166 1002 L234 1002 L227 1050 C226 1059 219 1066 210 1066 L190 1066 C181 1066 174 1059 173 1050 Z" fill="url(#gGlass)" stroke="var(--cream)" stroke-width="1.4" opacity="0.9"/>
-          <g clip-path="url(#glassClip)">
-            <rect x="163" y="1030" width="74" height="40" fill="url(#gCoffee)"/>
-            <ellipse cx="200" cy="1030" rx="37" ry="5" fill="var(--gold)" opacity="0.55"/>
-          </g>
-          <g stroke="var(--cream)" stroke-width="0.6" opacity="0.3">
-            <line x1="183" y1="1008" x2="180" y2="1058"/>
-            <line x1="200" y1="1004" x2="200" y2="1063"/>
-            <line x1="217" y1="1008" x2="220" y2="1058"/>
-          </g>
+        <!-- STAGE 3 — MUG: big bold mug breathing with a bobbing coffee line -->
+        <div class="story__frame" data-stage="3">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0 -40)">
+              <g class="breathe-mug" transform-origin="190 240">
+                <path d="M290 130 C326 128 352 154 352 188 C352 222 326 248 290 246" fill="none" stroke="var(--olive-dark)" stroke-width="20" stroke-linecap="round"/>
+                <path d="M100 110 L290 110 L290 290 C290 328 259 360 220 360 L170 360 C131 360 100 328 100 290 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="8"/>
+                <g clip-path="url(#mugClipCartoon)">
+                  <rect x="96" y="150" width="200" height="220" fill="var(--brown-dark)"/>
+                  <ellipse class="wave-line" cx="195" cy="152" rx="100" ry="10" fill="var(--gold)" transform-origin="195 152"/>
+                </g>
+                <clipPath id="mugClipCartoon"><path d="M100 110 L290 110 L290 290 C290 328 259 360 220 360 L170 360 C131 360 100 328 100 290 Z"/></clipPath>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-          <!-- ================= BAND 3 — POURED WITH PURPOSE (y 1200-1600) ================= -->
-          <ellipse cx="200" cy="1360" rx="140" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)" opacity="0.8"/>
-          <line x1="198" y1="1048" x2="198" y2="1200" stroke="var(--brown-dark)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M180 1200 L220 1200 L212 1228 L188 1228 Z" fill="url(#gSteel)" stroke="var(--brown)" stroke-width="1.6" stroke-linejoin="round"/>
-          <line x1="168" y1="1222" x2="168" y2="1260" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="200" y1="1222" x2="200" y2="1260" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M152 1288 L248 1288 L248 1380 C248 1400 232 1416 212 1416 L188 1416 C168 1416 152 1400 152 1380 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="2"/>
-          <path d="M248 1312 C272 1310 286 1326 286 1344 C286 1362 272 1378 248 1376 L248 1368 C266 1370 276 1358 276 1344 C276 1330 266 1318 248 1320 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="1.4"/>
-          <ellipse cx="200" cy="1288" rx="48" ry="8" fill="none" stroke="var(--cream)" stroke-width="1.4" opacity="0.55"/>
-          <g clip-path="url(#mugClipA)">
-            <rect x="150" y="1305" width="100" height="90" fill="url(#gCoffee)"/>
-            <ellipse cx="200" cy="1306" rx="48" ry="7" fill="var(--gold)" opacity="0.4"/>
-          </g>
-          <line x1="200" y1="1420" x2="200" y2="1600" stroke="var(--olive)" stroke-width="1.5" opacity="0.5"/>
+        <!-- STAGE 4 — MILK PITCHER: tilting pour loop with looping steam -->
+        <div class="story__frame" data-stage="4">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0 -35)">
+              <g class="steam-loop steam-1"><path d="M175 90c-14-14 12-22 -2-40" stroke="var(--olive-light)" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+              <g class="steam-loop steam-2"><path d="M205 84c-14-14 12-22 -2-40" stroke="var(--olive-light)" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+              <g class="sway-pitcher" transform-origin="140 320">
+                <path d="M110 150 C104 150 100 156 101 164 L118 300 C120 320 136 334 156 334 L204 334 C224 334 240 320 242 300 L256 168 L286 138 L250 148 L112 152 Z" fill="var(--olive)" stroke="var(--ink-2)" stroke-width="8" stroke-linejoin="round"/>
+                <path d="M112 178 C64 174 40 206 40 240 C40 274 64 300 112 296" fill="none" stroke="var(--olive)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                <ellipse cx="175" cy="152" rx="66" ry="16" fill="var(--cream)"/>
+                <g class="foam-bubble" fill="var(--ink-2)" opacity="0.5">
+                  <circle cx="150" cy="150" r="4"/>
+                  <circle cx="180" cy="146" r="3.4"/>
+                  <circle cx="205" cy="152" r="4"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-          <!-- ================= BAND 4 — SILKY STEAMED MILK (y 1600-2000) ================= -->
-          <g stroke="var(--olive-light)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55" filter="url(#blurSoft)">
-            <path d="M168 1630c-10-12 9-18 -1-32c-8-11 8-17 0-30"/>
-            <path d="M191 1624c-10-12 9-18 -1-32"/>
-            <path d="M213 1630c-10-12 9-18 -1-32c-8-11 8-17 0-30"/>
-          </g>
-          <path d="M156 1652 L232 1648 L226 1748 C225 1758 216 1766 205 1766 L179 1766 C168 1766 159 1758 158 1748 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="2"/>
-          <path d="M228 1650 L248 1634 L232 1660 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M156 1666 C134 1664 122 1680 122 1698 C122 1716 134 1730 156 1728" fill="none" stroke="url(#gSteel)" stroke-width="8" stroke-linecap="round"/>
-          <circle cx="156" cy="1670" r="2.5" fill="var(--ink-2)"/>
-          <circle cx="156" cy="1724" r="2.5" fill="var(--ink-2)"/>
-          <ellipse cx="193" cy="1654" rx="34" ry="9" fill="var(--cream)"/>
-          <g fill="var(--ink-2)" opacity="0.5">
-            <circle cx="180" cy="1653" r="1.2"/>
-            <circle cx="196" cy="1650" r="1.1"/>
-            <circle cx="208" cy="1655" r="1.2"/>
-            <circle cx="188" cy="1657" r="1"/>
-          </g>
-          <path d="M195 1776 L200 2152" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
-
-          <!-- ================= BAND 5 — OUR SIGNATURE POUR (y 2000-2400) ================= -->
-          <ellipse cx="200" cy="2210" rx="150" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)"/>
-          <path d="M152 2150 L248 2150 L248 2242 C248 2262 232 2278 212 2278 L188 2278 C168 2278 152 2262 152 2242 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="2"/>
-          <path d="M248 2174 C272 2172 286 2188 286 2206 C286 2224 272 2240 248 2238 L248 2230 C266 2232 276 2220 276 2206 C276 2192 266 2180 248 2182 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="1.4"/>
-          <g clip-path="url(#mugClipB)">
-            <rect x="150" y="2150" width="100" height="128" fill="url(#gCoffee)"/>
-          </g>
-          <ellipse cx="200" cy="2152" rx="48" ry="8" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="1.2"/>
-          <g fill="none" stroke="var(--cream)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M200 2260c0-24 0-42 0-58"/>
-            <path d="M200 2246c-16-4-26-14-26-26 14 2 24 12 26 26z"/>
-            <path d="M200 2230c16-4 26-14 26-26-14 2-24 12-26 26z"/>
-            <path d="M200 2214c-14-3-22-12-22-22 12 2 20 10 22 22z"/>
-            <path d="M200 2210c14-3 22-12 22-22-12 2-20 10-22 22z"/>
-          </g>
-          <g fill="var(--cream)" opacity="0.35">
-            <circle cx="172" cy="2168" r="1.3"/>
-            <circle cx="228" cy="2172" r="1.2"/>
-            <circle cx="180" cy="2260" r="1.2"/>
-            <circle cx="222" cy="2256" r="1.3"/>
-          </g>
-        </svg>
+        <!-- STAGE 5 — SIGNATURE POUR: mug with the olive branch popping in leaf by leaf -->
+        <div class="story__frame" data-stage="5">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0 -55)">
+              <path d="M290 140 C326 138 352 164 352 198 C352 232 326 258 290 256" fill="none" stroke="var(--olive-dark)" stroke-width="20" stroke-linecap="round"/>
+              <path d="M100 120 L290 120 L290 300 C290 338 259 370 220 370 L170 370 C131 370 100 338 100 300 Z" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="8"/>
+              <ellipse cx="195" cy="122" rx="95" ry="18" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="4"/>
+              <g fill="none" stroke="var(--cream)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+                <path class="leaf-pop leaf-0" d="M195 320c0-30 0-52 0-72"/>
+                <path class="leaf-pop leaf-1" d="M195 300c-20-5-32-18-32-32 18 2 30 15 32 32z"/>
+                <path class="leaf-pop leaf-2" d="M195 278c20-5 32-18 32-32-18 2-30 15-32 32z"/>
+                <path class="leaf-pop leaf-3" d="M195 256c-17-4-27-15-27-27 15 2 25 13 27 27z"/>
+                <path class="leaf-pop leaf-4" d="M195 250c17-4 27-15 27-27-15 2-25 13-27 27z"/>
+              </g>
+              <g class="twinkle twinkle-1" transform-origin="140 160"><circle cx="140" cy="160" r="5" fill="var(--gold)"/></g>
+              <g class="twinkle twinkle-2" transform-origin="252 180"><circle cx="252" cy="180" r="4" fill="var(--gold)"/></g>
+              <g class="twinkle twinkle-3" transform-origin="160 330"><circle cx="160" cy="330" r="4" fill="var(--gold)"/></g>
+            </g>
+          </svg>
+        </div>
       </div>
 
       <div class="story__caption">
