@@ -100,124 +100,41 @@
       <div class="story__intro">
         <p class="eyebrow">From Bean to Branch</p>
         <h2>Every Latte Has a Story</h2>
-        <p class="story__intro-copy">Scroll to follow one cup from the first bean to the final pour.</p>
+        <p class="story__intro-copy">Great, sourced coffee for a tasty pour.</p>
       </div>
 
       <ol class="story__stage-rail" id="stage-list">
-        <li class="stage-item is-active" data-stage="0"><span class="stage-item__num">01</span><span class="stage-item__label">Sourced &amp; Roasted</span></li>
-        <li class="stage-item" data-stage="1"><span class="stage-item__num">02</span><span class="stage-item__label">Freshly Ground</span></li>
-        <li class="stage-item" data-stage="2"><span class="stage-item__num">03</span><span class="stage-item__label">Pulled to Perfection</span></li>
-        <li class="stage-item" data-stage="3"><span class="stage-item__num">04</span><span class="stage-item__label">Poured with Purpose</span></li>
-        <li class="stage-item" data-stage="4"><span class="stage-item__num">05</span><span class="stage-item__label">Silky Steamed Milk</span></li>
-        <li class="stage-item" data-stage="5"><span class="stage-item__num">06</span><span class="stage-item__label">Our Signature Pour</span></li>
+        <li class="stage-item is-active" data-stage="0"><span class="stage-item__num">01</span><span class="stage-item__label">Pulled to Perfection</span></li>
+        <li class="stage-item" data-stage="1"><span class="stage-item__num">02</span><span class="stage-item__label">Poured with Purpose</span></li>
+        <li class="stage-item" data-stage="2"><span class="stage-item__num">03</span><span class="stage-item__label">Signature Latte Art</span></li>
       </ol>
 
       <div class="story__visual">
 
-        <!-- STAGE 0 — BEANS: three chunky beans bouncing in place -->
-        <div class="story__frame" data-stage="0">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(150 210)">
-              <g class="bounce-a">
-              <g transform="rotate(-14)">
-                <ellipse rx="58" ry="38" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7"/>
-                <path d="M-32 0c14-20 50-20 64 0" stroke="var(--cream)" stroke-width="7" fill="none" stroke-linecap="round"/>
-              </g>
-              </g>
-            </g>
-            <g transform="translate(262 165)">
-              <g class="bounce-b">
-              <g transform="rotate(18)">
-                <ellipse rx="48" ry="32" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="6"/>
-                <path d="M-27 0c12-16 42-16 54 0" stroke="var(--cream)" stroke-width="6" fill="none" stroke-linecap="round"/>
-              </g>
-              </g>
-            </g>
-            <g transform="translate(206 285)">
-              <g class="bounce-c">
-              <g transform="rotate(-6)">
-                <ellipse rx="50" ry="33" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="6"/>
-                <path d="M-28 0c12-17 44-17 56 0" stroke="var(--cream)" stroke-width="6" fill="none" stroke-linecap="round"/>
-              </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- STAGE 1 — GRINDER: chunky friendly grinder shaking with effort -->
-        <div class="story__frame" data-stage="1">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0 -30)">
-              <g class="wobble-grinder" transform-origin="200 360">
-                <path d="M130 70 C130 50 270 50 270 70 L250 170 C248 182 152 182 150 170 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
-                <rect x="160" y="178" width="80" height="130" rx="16" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7"/>
-                <rect x="156" y="228" width="88" height="24" rx="8" fill="var(--gold)" stroke="var(--ink-2)" stroke-width="6"/>
-                <path d="M172 308 L228 308 L216 348 L184 348 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="6" stroke-linejoin="round"/>
-              </g>
-              <g class="pop-grounds">
-                <circle class="pop-1" cx="170" cy="360" r="7" fill="var(--brown-dark)" transform-origin="170 360"/>
-                <circle class="pop-2" cx="200" cy="366" r="8" fill="var(--brown-dark)" transform-origin="200 366"/>
-                <circle class="pop-3" cx="230" cy="360" r="7" fill="var(--brown-dark)" transform-origin="230 360"/>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- STAGE 2 — ESPRESSO: real footage of the pour, scroll-scrubbed frame by frame -->
-        <div class="story__frame story__frame--photo" data-stage="2">
+        <!-- STAGE 0 — ESPRESSO: real footage of the pour, scroll-scrubbed frame by frame -->
+        <div class="story__frame story__frame--photo" data-stage="0">
           <div class="story__photo-box">
-            <img id="espresso-scrub" class="story__scrub-img" src="img/story/espresso/frame-001.webp" alt="Espresso pouring from the portafilter into a cup" width="760" height="428">
+            <img id="espresso-scrub" class="story__photo-img" src="img/story/espresso/frame-001.webp" alt="Espresso pouring from the portafilter into a cup" width="760" height="428">
           </div>
         </div>
 
-        <!-- STAGE 3 — MUG: big bold mug breathing with a bobbing coffee line -->
-        <div class="story__frame" data-stage="3">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0 -40)">
-              <g class="breathe-mug" transform-origin="190 240">
-                <path d="M290 130 C326 128 352 154 352 188 C352 222 326 248 290 246" fill="none" stroke="var(--olive-dark)" stroke-width="20" stroke-linecap="round"/>
-                <path d="M100 110 L290 110 L290 290 C290 328 259 360 220 360 L170 360 C131 360 100 328 100 290 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="8"/>
-                <g clip-path="url(#mugClipCartoon)">
-                  <rect x="96" y="150" width="200" height="220" fill="var(--brown-dark)"/>
-                  <ellipse class="wave-line" cx="195" cy="152" rx="100" ry="10" fill="var(--gold)" transform-origin="195 152"/>
-                </g>
-                <clipPath id="mugClipCartoon"><path d="M100 110 L290 110 L290 290 C290 328 259 360 220 360 L170 360 C131 360 100 328 100 290 Z"/></clipPath>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- STAGE 4 — MILK PITCHER: tilting pour loop with looping steam -->
-        <div class="story__frame" data-stage="4">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0 -35)">
-              <g class="steam-loop steam-1"><path d="M175 90c-14-14 12-22 -2-40" stroke="var(--olive-light)" stroke-width="8" fill="none" stroke-linecap="round"/></g>
-              <g class="steam-loop steam-2"><path d="M205 84c-14-14 12-22 -2-40" stroke="var(--olive-light)" stroke-width="8" fill="none" stroke-linecap="round"/></g>
-              <g class="sway-pitcher" transform-origin="140 320">
-                <path d="M110 150 C104 150 100 156 101 164 L118 300 C120 320 136 334 156 334 L204 334 C224 334 240 320 242 300 L256 168 L286 138 L250 148 L112 152 Z" fill="var(--olive)" stroke="var(--ink-2)" stroke-width="8" stroke-linejoin="round"/>
-                <path d="M112 178 C64 174 40 206 40 240 C40 274 64 300 112 296" fill="none" stroke="var(--olive)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                <ellipse cx="175" cy="152" rx="66" ry="16" fill="var(--cream)"/>
-                <g class="foam-bubble" fill="var(--ink-2)" opacity="0.5">
-                  <circle cx="150" cy="150" r="4"/>
-                  <circle cx="180" cy="146" r="3.4"/>
-                  <circle cx="205" cy="152" r="4"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- STAGE 5 — SIGNATURE POUR: real photos, milk-pour art fading into the finished branch -->
-        <div class="story__frame story__frame--photo" data-stage="5">
+        <!-- STAGE 1 — MILK: steamed milk poured with purpose -->
+        <div class="story__frame story__frame--photo" data-stage="1">
           <div class="story__photo-box">
-            <img class="story__reveal-img story__reveal-img--a" src="img/story/milk-pour.webp" alt="Steamed milk being poured to create latte art" width="860" height="480">
-            <img class="story__reveal-img story__reveal-img--b" src="img/story/latte-art-photo.webp" alt="Finished latte art in the shape of a leaf" width="860" height="480">
+            <img class="story__photo-img" src="img/story/milk-pour.webp" alt="Steamed milk being poured to create latte art" width="860" height="480">
+          </div>
+        </div>
+
+        <!-- STAGE 2 — SIGNATURE LATTE ART: the finished olive branch -->
+        <div class="story__frame story__frame--photo" data-stage="2">
+          <div class="story__photo-box">
+            <img class="story__photo-img" src="img/story/latte-art-photo.webp" alt="Finished latte art in the shape of a leaf" width="860" height="480">
           </div>
         </div>
       </div>
 
       <div class="story__caption">
-        <p class="story__caption-text" id="story-caption">We start with beans sourced with care and roasted for warmth, not bitterness.</p>
+        <p class="story__caption-text" id="story-caption">Great, sourced coffee for a tasty pour — pulled to perfection, nine bars of pressure and twenty-five seconds of patience.</p>
       </div>
     </div>
   </section>
