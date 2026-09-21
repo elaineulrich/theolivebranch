@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     captionEl.textContent = captions[captions.length - 1];
     requestAnimationFrame(() => {
       const pxPerUnit = mural.getBoundingClientRect().width / 400;
-      mural.style.transform = `translateY(${-2000 * pxPerUnit}px)`;
+      mural.style.transform = `translateY(${-2100 * pxPerUnit}px)`;
     });
     return;
   }
@@ -96,15 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // down). Scrolling simply pans the viewport down through it, so the motion
   // is genuinely linear/continuous rather than a slideshow of separate scenes.
   let maxTranslate = 0;
+  let pxPerUnit = 1;
+  let viewportUnits = 0;
 
   function measure() {
-    const muralHeight = mural.getBoundingClientRect().height;
+    const muralRect = mural.getBoundingClientRect();
     const viewportHeight = storyVisual.getBoundingClientRect().height;
-    maxTranslate = Math.max(0, muralHeight - viewportHeight);
+    pxPerUnit = muralRect.width / 400;
+    viewportUnits = viewportHeight / pxPerUnit;
+    maxTranslate = Math.max(0, muralRect.height - viewportHeight);
   }
 
   function updateStory(progress) {
-    const captionStage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(progress * STAGE_COUNT)));
+    // Derive the caption from what's actually centered on screen (not from a
+    // raw progress/6 split) so the label never drifts out of sync with the
+    // pan — the two are computed differently (the pan subtracts viewport
+    // height from the range; a naive split doesn't) and will disagree unless
+    // tied together explicitly.
+    const topViewBoxY = (progress * maxTranslate) / pxPerUnit;
+    const centerViewBoxY = topViewBoxY + viewportUnits / 2;
+    const captionStage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(centerViewBoxY / MURAL_VB_HEIGHT * STAGE_COUNT)));
 
     stageItems.forEach((item, i) => item.classList.toggle('is-active', i === captionStage));
     if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
