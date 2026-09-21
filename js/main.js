@@ -55,8 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Story: bean-to-latte scrollytelling ---------- */
   const storySection = document.querySelector('.story');
-  const storyVisual = document.querySelector('.story__visual');
-  const mural = document.getElementById('story-mural');
+  const frames = document.querySelectorAll('.story__frame');
   const stageItems = document.querySelectorAll('.stage-item');
   const stageRail = document.querySelector('.story__stage-rail');
   const captionEl = document.getElementById('story-caption');
@@ -72,73 +71,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (!storySection || !mural) return;
+  if (!storySection || !frames.length) return;
 
   const STAGE_COUNT = captions.length;
-  const MURAL_VB_HEIGHT = 2400; // matches the SVG's viewBox height
+
+  function setStage(stage) {
+    frames.forEach((frame, i) => frame.classList.toggle('is-active', i === stage));
+    stageItems.forEach((item, i) => item.classList.toggle('is-active', i === stage));
+    captionEl.textContent = captions[stage];
+  }
 
   if (reduceMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    // Static fallback: pan straight to the final pour, full caption, no scrub.
+    // Static fallback: show the finished pour, full caption, skip the scrub.
     storySection.classList.add('story--static');
-    stageItems.forEach((it, i) => it.classList.toggle('is-active', i === stageItems.length - 1));
-    captionEl.textContent = captions[captions.length - 1];
-    requestAnimationFrame(() => {
-      const pxPerUnit = mural.getBoundingClientRect().width / 400;
-      mural.style.transform = `translateY(${-2100 * pxPerUnit}px)`;
-    });
+    setStage(STAGE_COUNT - 1);
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // The whole sequence is ONE tall illustration (a vertical "mural" — beans at
-  // the top, latte art at the bottom, connected by drips/chutes the whole way
-  // down). Scrolling simply pans the viewport down through it, so the motion
-  // is genuinely linear/continuous rather than a slideshow of separate scenes.
-  let maxTranslate = 0;
-  let pxPerUnit = 1;
-  let viewportUnits = 0;
-
-  function measure() {
-    const muralRect = mural.getBoundingClientRect();
-    const viewportHeight = storyVisual.getBoundingClientRect().height;
-    pxPerUnit = muralRect.width / 400;
-    viewportUnits = viewportHeight / pxPerUnit;
-    maxTranslate = Math.max(0, muralRect.height - viewportHeight);
-  }
-
-  function updateStory(progress) {
-    // Derive the caption from what's actually centered on screen (not from a
-    // raw progress/6 split) so the label never drifts out of sync with the
-    // pan — the two are computed differently (the pan subtracts viewport
-    // height from the range; a naive split doesn't) and will disagree unless
-    // tied together explicitly.
-    const topViewBoxY = (progress * maxTranslate) / pxPerUnit;
-    const centerViewBoxY = topViewBoxY + viewportUnits / 2;
-    const captionStage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(centerViewBoxY / MURAL_VB_HEIGHT * STAGE_COUNT)));
-
-    stageItems.forEach((item, i) => item.classList.toggle('is-active', i === captionStage));
-    if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
-    captionEl.textContent = captions[captionStage];
-
-    mural.style.transform = `translateY(${(-progress * maxTranslate).toFixed(1)}px)`;
-  }
-
-  measure();
+  // Each stage is its own bouncy, continuously-animated cartoon vignette
+  // (bouncing beans, a wobbling grinder, a jelly-stretch drip...). Scrolling
+  // just decides which one is currently "on stage" — the life comes from the
+  // CSS keyframe loops running inside each frame, not from the scroll math.
+  let currentStage = -1;
 
   ScrollTrigger.create({
     trigger: storySection,
     start: 'top top',
     end: 'bottom bottom',
-    scrub: 0.4,
-    onUpdate: (self) => updateStory(self.progress),
-    onRefresh: () => measure()
+    scrub: 0.3,
+    onUpdate(self) {
+      const stage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(self.progress * STAGE_COUNT)));
+      if (stageRail) stageRail.style.setProperty('--rail-progress', `${self.progress * 100}%`);
+      if (stage === currentStage) return;
+      currentStage = stage;
+      setStage(stage);
+    }
   });
 
-  window.addEventListener('resize', () => {
-    measure();
-    ScrollTrigger.refresh();
-  });
-
-  updateStory(0);
+  setStage(0);
+  currentStage = 0;
 });
