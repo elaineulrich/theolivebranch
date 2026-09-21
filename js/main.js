@@ -90,10 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Each stage is its own bouncy, continuously-animated cartoon vignette
-  // (bouncing beans, a wobbling grinder, a jelly-stretch drip...). Scrolling
-  // just decides which one is currently "on stage" — the life comes from the
-  // CSS keyframe loops running inside each frame, not from the scroll math.
+  /* ---------- Espresso pour (stage 2): real footage, scrubbed frame by frame ---------- */
+  const ESPRESSO_STAGE = 2;
+  const ESPRESSO_FRAME_COUNT = 41;
+  const espressoImg = document.getElementById('espresso-scrub');
+  let espressoFrameIndex = -1;
+
+  const espressoFramePath = (i) => `img/story/espresso/frame-${String(i).padStart(3, '0')}.webp`;
+
+  if (espressoImg) {
+    for (let i = 1; i <= ESPRESSO_FRAME_COUNT; i++) {
+      new Image().src = espressoFramePath(i);
+    }
+  }
+
+  function setEspressoFrame(localProgress) {
+    const idx = Math.min(
+      ESPRESSO_FRAME_COUNT,
+      Math.max(1, Math.round(localProgress * (ESPRESSO_FRAME_COUNT - 1)) + 1)
+    );
+    if (idx === espressoFrameIndex) return;
+    espressoFrameIndex = idx;
+    espressoImg.src = espressoFramePath(idx);
+  }
+
+  // Each stage is its own bouncy, continuously-animated vignette (bouncing
+  // beans, a wobbling grinder...); scrolling just decides which one is
+  // currently "on stage." The espresso stage is the exception — its "life"
+  // comes from scrubbing real footage frame by frame as the user scrolls,
+  // rather than from a CSS keyframe loop.
   let currentStage = -1;
 
   ScrollTrigger.create({
@@ -104,6 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
     onUpdate(self) {
       const stage = Math.max(0, Math.min(STAGE_COUNT - 1, Math.floor(self.progress * STAGE_COUNT)));
       if (stageRail) stageRail.style.setProperty('--rail-progress', `${self.progress * 100}%`);
+
+      if (espressoImg) {
+        const stageStart = ESPRESSO_STAGE / STAGE_COUNT;
+        const stageEnd = (ESPRESSO_STAGE + 1) / STAGE_COUNT;
+        if (self.progress >= stageStart && self.progress <= stageEnd) {
+          setEspressoFrame((self.progress - stageStart) / (stageEnd - stageStart));
+        }
+      }
+
       if (stage === currentStage) return;
       currentStage = stage;
       setStage(stage);

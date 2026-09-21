@@ -404,6 +404,39 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1) rotate(0deg);
 }
 
+/* ---- real-photo stages (espresso scrub + signature-pour reveal) ---- */
+.story__frame--photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.story__photo-box {
+  position: relative;
+  width: min(88%, 640px);
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 8px solid var(--ink-2);
+  box-shadow: 0 24px 48px rgba(36, 26, 16, 0.22);
+  background: var(--ink-2);
+}
+.story__scrub-img,
+.story__reveal-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story__reveal-img--a { opacity: 1; }
+.story__reveal-img--b { opacity: 0; }
+.story__frame[data-stage="5"].is-active .story__reveal-img--b {
+  animation: revealFadeIn 1.1s ease 1.6s forwards;
+}
+@keyframes revealFadeIn {
+  to { opacity: 1; }
+}
+
 /* Stage 0 — bouncing beans, staggered */
 .bounce-a, .bounce-b, .bounce-c { animation: beanBounce 1.6s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
 .bounce-a { animation-delay: 0s; }
@@ -475,28 +508,6 @@ a { color: inherit; text-decoration: none; }
 @keyframes bubbleJitter {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
-}
-
-/* Stage 5 — olive branch popping in leaf by leaf, sparkles twinkling */
-.leaf-pop {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: leafDraw 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-.story__frame[data-stage="5"].is-active .leaf-0 { animation-delay: 0.05s; }
-.story__frame[data-stage="5"].is-active .leaf-1 { animation-delay: 0.25s; }
-.story__frame[data-stage="5"].is-active .leaf-2 { animation-delay: 0.4s; }
-.story__frame[data-stage="5"].is-active .leaf-3 { animation-delay: 0.55s; }
-.story__frame[data-stage="5"].is-active .leaf-4 { animation-delay: 0.7s; }
-@keyframes leafDraw {
-  to { stroke-dashoffset: 0; }
-}
-.twinkle { animation: twinkleFade 1.6s ease-in-out infinite; }
-.twinkle-2 { animation-delay: 0.5s; }
-.twinkle-3 { animation-delay: 1s; }
-@keyframes twinkleFade {
-  0%, 100% { opacity: 0.15; transform: scale(0.7); }
-  50% { opacity: 1; transform: scale(1.2); }
 }
 
 .story__caption {
@@ -751,5 +762,5 @@ a { color: inherit; text-decoration: none; }
     transition: none !important;
   }
   .story__frame.is-active { opacity: 1; transform: none; }
-  .leaf-pop { stroke-dashoffset: 0; }
+  .story__reveal-img--b { opacity: 1; }
 }
