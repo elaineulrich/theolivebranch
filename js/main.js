@@ -61,12 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const captionEl = document.getElementById('story-caption');
 
   const captions = [
-    'We start with beans sourced with care and roasted for warmth, not bitterness.',
-    'Ground to order, right before your shot is pulled — because stale grounds make stale coffee.',
-    'A slow, precise pull draws out the richness — nine bars of pressure, twenty-five seconds of patience.',
-    'Straight from the portafilter into the mug — nothing wasted, nothing rushed.',
-    'Milk steamed to a whisper-thin microfoam — silky enough to hold a design.',
-    'And finally, an olive branch — poured by hand, just for you. Rooted in faith, served with love.'
+    'Great, sourced coffee for a tasty pour — pulled to perfection, nine bars of pressure and twenty-five seconds of patience.',
+    'Steamed milk poured with purpose — nothing wasted, nothing rushed.',
+    'Our signature latte art — an olive branch, poured by hand, just for you. Rooted in faith, served with love.'
   ];
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -90,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- Espresso pour (stage 2): real footage, scrubbed frame by frame ---------- */
-  const ESPRESSO_STAGE = 2;
+  /* ---------- Espresso pour (stage 0): real footage, scrubbed frame by frame ---------- */
+  const ESPRESSO_STAGE = 0;
   const ESPRESSO_FRAME_COUNT = 41;
   const espressoImg = document.getElementById('espresso-scrub');
   let espressoFrameIndex = -1;
@@ -114,11 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
     espressoImg.src = espressoFramePath(idx);
   }
 
-  // Each stage is its own bouncy, continuously-animated vignette (bouncing
-  // beans, a wobbling grinder...); scrolling just decides which one is
-  // currently "on stage." The espresso stage is the exception — its "life"
-  // comes from scrubbing real footage frame by frame as the user scrolls,
-  // rather than from a CSS keyframe loop.
+  // Scrolling decides which of the three real-photo stages is on screen.
+  // The espresso stage's "life" comes from scrubbing real footage frame by
+  // frame as the user scrolls; the other two are simple bounce-in photos.
   let currentStage = -1;
 
   ScrollTrigger.create({
