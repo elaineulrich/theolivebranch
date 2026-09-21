@@ -163,23 +163,11 @@
           </svg>
         </div>
 
-        <!-- STAGE 2 — ESPRESSO: bold group head with a stretchy jelly drip -->
-        <div class="story__frame" data-stage="2">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0 -55)">
-              <path d="M110 50 L290 50 L290 108 C290 130 270 148 246 148 L154 148 C130 148 110 130 110 108 Z" fill="var(--olive-dark)" stroke="var(--ink-2)" stroke-width="7"/>
-              <circle cx="158" cy="90" r="9" fill="var(--ink-2)"/>
-              <circle cx="242" cy="90" r="9" fill="var(--ink-2)"/>
-              <path d="M150 148 L250 148 L228 200 L172 200 Z" fill="var(--brown)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
-              <g class="drip-stretch" transform-origin="200 200">
-                <rect x="188" y="200" width="24" height="90" rx="12" fill="var(--brown-dark)"/>
-              </g>
-              <g class="bob-cup" transform-origin="200 380">
-                <path d="M150 300 L250 300 L242 370 C240 388 224 400 206 400 L194 400 C176 400 160 388 158 370 Z" fill="var(--cream)" stroke="var(--ink-2)" stroke-width="7" stroke-linejoin="round"/>
-                <path d="M158 340 L242 340 L237 372 C236 386 222 396 208 396 L192 396 C178 396 164 386 163 372 Z" fill="var(--gold)"/>
-              </g>
-            </g>
-          </svg>
+        <!-- STAGE 2 — ESPRESSO: real footage of the pour, scroll-scrubbed frame by frame -->
+        <div class="story__frame story__frame--photo" data-stage="2">
+          <div class="story__photo-box">
+            <img id="espresso-scrub" class="story__scrub-img" src="img/story/espresso/frame-001.webp" alt="Espresso pouring from the portafilter into a cup" width="760" height="428">
+          </div>
         </div>
 
         <!-- STAGE 3 — MUG: big bold mug breathing with a bobbing coffee line -->
@@ -219,25 +207,12 @@
           </svg>
         </div>
 
-        <!-- STAGE 5 — SIGNATURE POUR: mug with the olive branch popping in leaf by leaf -->
-        <div class="story__frame" data-stage="5">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0 -55)">
-              <path d="M290 140 C326 138 352 164 352 198 C352 232 326 258 290 256" fill="none" stroke="var(--olive-dark)" stroke-width="20" stroke-linecap="round"/>
-              <path d="M100 120 L290 120 L290 300 C290 338 259 370 220 370 L170 370 C131 370 100 338 100 300 Z" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="8"/>
-              <ellipse cx="195" cy="122" rx="95" ry="18" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="4"/>
-              <g fill="none" stroke="var(--cream)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-                <path class="leaf-pop leaf-0" d="M195 320c0-30 0-52 0-72"/>
-                <path class="leaf-pop leaf-1" d="M195 300c-20-5-32-18-32-32 18 2 30 15 32 32z"/>
-                <path class="leaf-pop leaf-2" d="M195 278c20-5 32-18 32-32-18 2-30 15-32 32z"/>
-                <path class="leaf-pop leaf-3" d="M195 256c-17-4-27-15-27-27 15 2 25 13 27 27z"/>
-                <path class="leaf-pop leaf-4" d="M195 250c17-4 27-15 27-27-15 2-25 13-27 27z"/>
-              </g>
-              <g class="twinkle twinkle-1" transform-origin="140 160"><circle cx="140" cy="160" r="5" fill="var(--gold)"/></g>
-              <g class="twinkle twinkle-2" transform-origin="252 180"><circle cx="252" cy="180" r="4" fill="var(--gold)"/></g>
-              <g class="twinkle twinkle-3" transform-origin="160 330"><circle cx="160" cy="330" r="4" fill="var(--gold)"/></g>
-            </g>
-          </svg>
+        <!-- STAGE 5 — SIGNATURE POUR: real photos, milk-pour art fading into the finished branch -->
+        <div class="story__frame story__frame--photo" data-stage="5">
+          <div class="story__photo-box">
+            <img class="story__reveal-img story__reveal-img--a" src="img/story/milk-pour.webp" alt="Steamed milk being poured to create latte art" width="860" height="480">
+            <img class="story__reveal-img story__reveal-img--b" src="img/story/latte-art-photo.webp" alt="Finished latte art in the shape of a leaf" width="860" height="480">
+          </div>
         </div>
       </div>
 
