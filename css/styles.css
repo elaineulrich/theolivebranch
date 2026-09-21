@@ -389,19 +389,17 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   opacity: 0;
-  transform: scale(0.94);
-  transition: opacity 0.22s ease, transform 0.3s ease;
+  transition: opacity 0.12s linear;
   filter: drop-shadow(0 0 46px rgba(207, 160, 90, 0.14));
-}
-.story__frame.is-active {
-  opacity: 1;
-  transform: scale(1);
+  will-change: opacity;
 }
 .story__frame__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
+  transition: transform 0.12s linear;
+  will-change: transform;
 }
 .story__visual::after {
   content: '';
@@ -442,44 +440,6 @@ a { color: inherit; text-decoration: none; }
   50% { transform: translateY(6px); }
   100% { transform: translateY(-6px); }
 }
-
-.grind-fall circle { animation: grindFall 1.4s ease-in infinite; }
-.grind-fall circle:nth-child(2) { animation-delay: 0.2s; }
-.grind-fall circle:nth-child(3) { animation-delay: 0.4s; }
-.grind-fall circle:nth-child(4) { animation-delay: 0.6s; }
-.grind-fall circle:nth-child(5) { animation-delay: 0.1s; }
-@keyframes grindFall {
-  0% { transform: translateY(-4px); opacity: 0; }
-  30% { opacity: 1; }
-  100% { transform: translateY(30px); opacity: 0; }
-}
-
-.espresso-stream { stroke-dasharray: 110; stroke-dashoffset: 110; }
-.story__frame[data-stage="2"].is-active .espresso-stream { animation: streamFlow 1.4s linear infinite; }
-@keyframes streamFlow { to { stroke-dashoffset: 0; } }
-
-.pour-stream { stroke-dasharray: 45; stroke-dashoffset: 45; }
-.story__frame[data-stage="3"].is-active .pour-stream { animation: streamFlow 0.7s linear infinite; }
-
-.steam path { stroke-dasharray: 40; stroke-dashoffset: 40; }
-.story__frame[data-stage="4"].is-active .steam path {
-  animation: steamRise 2.2s ease-in-out infinite;
-  opacity: 1;
-}
-.story__frame[data-stage="4"].is-active .milk-shimmer { opacity: 1; transition: opacity 0.6s ease; }
-@keyframes steamRise {
-  0% { stroke-dashoffset: 40; opacity: 0; }
-  30% { opacity: 0.9; }
-  100% { stroke-dashoffset: 0; opacity: 0; }
-}
-.steam path:nth-child(2) { animation-delay: 0.4s; }
-.steam path:nth-child(3) { animation-delay: 0.8s; }
-
-.latte-art path {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-}
-.latte-art-dove { transition: opacity 0.6s ease 0.3s; }
 
 /* ==========================================================================
    MENU

@@ -55,16 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Story: bean-to-latte scrollytelling ---------- */
   const storySection = document.querySelector('.story');
-  const frames = document.querySelectorAll('.story__frame');
+  const frames = Array.from(document.querySelectorAll('.story__frame'));
+  const frameMedia = frames.map(f => f.querySelector('.story__frame__img') || f);
   const stageItems = document.querySelectorAll('.stage-item');
   const stageRail = document.querySelector('.story__stage-rail');
   const captionEl = document.getElementById('story-caption');
-
-  const espressoFill = document.querySelector('.espresso-fill');
-  const cremaSwirl = document.querySelector('.crema-swirl');
-  const mugFill = document.querySelector('.mug-fill');
-  const latteArtPaths = document.querySelectorAll('.latte-art path');
-  const doveEl = document.querySelector('.latte-art-dove');
 
   const captions = [
     'We start with beans sourced with care and roasted for warmth, not bitterness.',
@@ -79,69 +74,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!storySection) return;
 
+  const STAGE_COUNT = frames.length;
+  const N = STAGE_COUNT - 1;
+
   if (reduceMotion || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
     // Static fallback: show the final pour, full caption, skip the scrub animation.
     storySection.classList.add('story--static');
-    frames.forEach((f, i) => f.classList.toggle('is-active', i === frames.length - 1));
+    frames.forEach((f, i) => { f.style.opacity = i === frames.length - 1 ? '1' : '0'; });
     stageItems.forEach((it, i) => it.classList.toggle('is-active', i === stageItems.length - 1));
     captionEl.textContent = captions[captions.length - 1];
-    latteArtPaths.forEach(p => { p.style.strokeDashoffset = '0'; });
-    if (doveEl) doveEl.style.opacity = '1';
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const STAGE_COUNT = frames.length;
+  // Each stage's photo is a full-bleed "frame" in one continuous downward pour:
+  // frames cross-dissolve into each other (linear opacity ramp centered on each
+  // stage) rather than hard-cutting, and every frame drifts slowly downward as
+  // its moment passes — so the whole sequence reads as one flowing shot instead
+  // of a slideshow of discrete images.
+  const DRIFT_PERCENT = 6;   // how far a frame drifts vertically across its own span
+  const ZOOM_AMOUNT = 0.06;  // subtle continuous Ken Burns push-in
+
+  function updateStory(progress) {
+    // Map progress 0..1 so stage 0 is fully centered at progress=0 and the
+    // last stage is fully centered at progress=1, with even crossfades between.
+    const stageProgress = progress * N + 0.5;
+    const captionStage = Math.max(0, Math.min(N, Math.round(stageProgress - 0.5)));
+
+    stageItems.forEach((item, i) => item.classList.toggle('is-active', i === captionStage));
+    if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
+    captionEl.textContent = captions[captionStage];
+
+    frames.forEach((frame, i) => {
+      const center = i + 0.5;
+      const dist = stageProgress - center; // -1..1 across this frame's visible span
+      const clamped = Math.max(-1, Math.min(1, dist));
+      const opacity = Math.max(0, 1 - Math.abs(dist));
+
+      frame.style.opacity = opacity.toFixed(3);
+
+      const drift = clamped * DRIFT_PERCENT;
+      const scale = 1 + ZOOM_AMOUNT * (1 - Math.abs(clamped));
+      frameMedia[i].style.transform = `scale(${scale.toFixed(3)}) translateY(${drift.toFixed(2)}%)`;
+    });
+  }
 
   ScrollTrigger.create({
     trigger: storySection,
     start: 'top top',
     end: 'bottom bottom',
     scrub: 0.4,
-    onUpdate(self) {
-      const progress = self.progress;
-      const stageProgress = progress * STAGE_COUNT;
-      const activeStage = Math.min(STAGE_COUNT - 1, Math.floor(stageProgress));
-      const localProgress = Math.min(1, Math.max(0, stageProgress - activeStage));
-
-      frames.forEach((frame, i) => frame.classList.toggle('is-active', i === activeStage));
-      stageItems.forEach((item, i) => item.classList.toggle('is-active', i === activeStage));
-      if (stageRail) stageRail.style.setProperty('--rail-progress', `${progress * 100}%`);
-      captionEl.textContent = captions[activeStage];
-
-      // Stage 2 — espresso shot filling the glass
-      if (espressoFill) {
-        const active = activeStage === 2;
-        const fillProgress = active ? localProgress : (activeStage > 2 ? 1 : 0);
-        const maxHeight = 38;
-        const h = fillProgress * maxHeight;
-        espressoFill.setAttribute('height', h.toFixed(1));
-        espressoFill.setAttribute('y', (318 - h).toFixed(1));
-        if (cremaSwirl) cremaSwirl.style.opacity = fillProgress > 0.7 ? '1' : '0';
-      }
-
-      // Stage 3 — pouring shot into the mug
-      if (mugFill) {
-        const active = activeStage === 3;
-        const fillProgress = active ? localProgress : (activeStage > 3 ? 1 : 0);
-        const maxHeight = 100;
-        const h = fillProgress * maxHeight;
-        mugFill.setAttribute('height', h.toFixed(1));
-        mugFill.setAttribute('y', (314 - h).toFixed(1));
-      }
-
-      // Stage 5 — hand-drawn olive branch latte art
-      if (latteArtPaths.length) {
-        const active = activeStage === 5;
-        const drawProgress = active ? localProgress : (activeStage > 5 ? 1 : 0);
-        latteArtPaths.forEach((p, idx) => {
-          const segStart = idx * 0.14;
-          const segProgress = Math.min(1, Math.max(0, (drawProgress - segStart) / 0.4));
-          p.style.strokeDashoffset = `${100 - segProgress * 100}`;
-        });
-        if (doveEl) doveEl.style.opacity = drawProgress > 0.88 ? '1' : '0';
-      }
-    }
+    onUpdate: (self) => updateStory(self.progress)
   });
+
+  updateStory(0);
 });
