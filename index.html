@@ -114,94 +114,181 @@
 
       <div class="story__visual">
         <svg class="story__mural" id="story-mural" viewBox="0 0 400 2400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet">
+          <defs>
+            <radialGradient id="gBean" cx="35%" cy="28%" r="80%">
+              <stop offset="0%" stop-color="#9c6a42"/>
+              <stop offset="55%" stop-color="#4a2f1c"/>
+              <stop offset="100%" stop-color="#241509"/>
+            </radialGradient>
+            <linearGradient id="gMetal" x1="0%" y1="0%" x2="100%" y2="10%">
+              <stop offset="0%" stop-color="#0c0906"/>
+              <stop offset="30%" stop-color="#332a20"/>
+              <stop offset="48%" stop-color="#6b5a44"/>
+              <stop offset="62%" stop-color="#2a2118"/>
+              <stop offset="100%" stop-color="#0c0906"/>
+            </linearGradient>
+            <linearGradient id="gSteel" x1="0%" y1="0%" x2="100%" y2="6%">
+              <stop offset="0%" stop-color="#171310"/>
+              <stop offset="24%" stop-color="#786d5c"/>
+              <stop offset="45%" stop-color="#e8e0cd"/>
+              <stop offset="60%" stop-color="#786d5c"/>
+              <stop offset="100%" stop-color="#171310"/>
+            </linearGradient>
+            <linearGradient id="gCeramic" x1="10%" y1="0%" x2="95%" y2="100%">
+              <stop offset="0%" stop-color="#3f4c2d"/>
+              <stop offset="38%" stop-color="#7E9459"/>
+              <stop offset="58%" stop-color="#B9C79C"/>
+              <stop offset="75%" stop-color="#6a7d49"/>
+              <stop offset="100%" stop-color="#333f24"/>
+            </linearGradient>
+            <linearGradient id="gCoffee" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#CFA05A"/>
+              <stop offset="14%" stop-color="#6b4527"/>
+              <stop offset="100%" stop-color="#20120a"/>
+            </linearGradient>
+            <linearGradient id="gGlass" x1="0%" y1="0%" x2="100%" y2="8%">
+              <stop offset="0%" stop-color="rgba(244,235,220,0.03)"/>
+              <stop offset="38%" stop-color="rgba(244,235,220,0.05)"/>
+              <stop offset="50%" stop-color="rgba(244,235,220,0.4)"/>
+              <stop offset="62%" stop-color="rgba(244,235,220,0.05)"/>
+              <stop offset="100%" stop-color="rgba(244,235,220,0.02)"/>
+            </linearGradient>
+            <radialGradient id="gSpot" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(207,160,90,0.4)"/>
+              <stop offset="100%" stop-color="rgba(207,160,90,0)"/>
+            </radialGradient>
+            <filter id="blurSoft" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="7"/>
+            </filter>
+            <filter id="blurGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="30"/>
+            </filter>
+            <clipPath id="mugClipA"><path d="M152 1288 L248 1288 L248 1380 C248 1400 232 1416 212 1416 L188 1416 C168 1416 152 1400 152 1380 Z"/></clipPath>
+            <clipPath id="mugClipB"><path d="M152 2150 L248 2150 L248 2242 C248 2262 232 2278 212 2278 L188 2278 C168 2278 152 2262 152 2242 Z"/></clipPath>
+            <clipPath id="glassClip"><path d="M166 1002 L234 1002 L227 1050 C226 1059 219 1066 210 1066 L190 1066 C181 1066 174 1059 173 1050 Z"/></clipPath>
+          </defs>
 
           <!-- unifying spine connecting every stage into one apparatus -->
           <line x1="200" y1="0" x2="200" y2="2400" stroke="var(--olive)" stroke-width="1" stroke-dasharray="2 10" opacity="0.14"/>
 
           <!-- ================= BAND 0 — BEANS (y 0-400) ================= -->
-          <g fill="var(--brown)">
-            <g transform="translate(150 150) rotate(-15)"><ellipse rx="17" ry="11"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none"/></g>
-            <g transform="translate(230 130) rotate(20)"><ellipse rx="15" ry="10"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
-            <g transform="translate(270 190) rotate(-35)"><ellipse rx="16" ry="10.5"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none"/></g>
-            <g transform="translate(120 220) rotate(10)"><ellipse rx="15" ry="9.5"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
-            <g transform="translate(195 205) rotate(-10)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-5 11-5 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
-            <g transform="translate(250 260) rotate(25)"><ellipse rx="16" ry="10"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none"/></g>
-            <g transform="translate(160 295) rotate(-20)"><ellipse rx="13" ry="8.5"/><path d="M-7 0c3-4 10-4 13 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
-            <g transform="translate(220 325) rotate(15)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-4 11-4 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none"/></g>
+          <ellipse cx="195" cy="220" rx="140" ry="150" fill="url(#gSpot)" filter="url(#blurGlow)"/>
+          <g fill="url(#gBean)">
+            <g transform="translate(150 150) rotate(-15)"><ellipse rx="17" ry="11"/><path d="M-9 0c4-6 14-6 18 0" stroke="var(--cream)" stroke-width="1.4" fill="none" opacity="0.8"/></g>
+            <g transform="translate(230 130) rotate(20)"><ellipse rx="15" ry="10"/><path d="M-8 0c4-5 12-5 16 0" stroke="var(--cream)" stroke-width="1.3" fill="none" opacity="0.8"/></g>
+            <g transform="translate(270 190) rotate(-35)"><ellipse rx="16" ry="10.5"/><path d="M-8 0c4-5 13-5 17 0" stroke="var(--cream)" stroke-width="1.3" fill="none" opacity="0.8"/></g>
+            <g transform="translate(120 220) rotate(10)"><ellipse rx="15" ry="9.5"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none" opacity="0.8"/></g>
+            <g transform="translate(195 205) rotate(-10)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-5 11-5 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
+            <g transform="translate(250 260) rotate(25)"><ellipse rx="16" ry="10"/><path d="M-8 0c3-5 12-5 15 0" stroke="var(--cream)" stroke-width="1.2" fill="none" opacity="0.8"/></g>
+            <g transform="translate(160 295) rotate(-20)"><ellipse rx="13" ry="8.5"/><path d="M-7 0c3-4 10-4 13 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
+            <g transform="translate(220 325) rotate(15)"><ellipse rx="14" ry="9"/><path d="M-7 0c3-4 11-4 14 0" stroke="var(--cream)" stroke-width="1.1" fill="none" opacity="0.8"/></g>
           </g>
           <path d="M130 350 L193 400" stroke="var(--olive)" stroke-width="1.5" opacity="0.6"/>
           <path d="M270 350 L207 400" stroke="var(--olive)" stroke-width="1.5" opacity="0.6"/>
 
           <!-- ================= BAND 1 — GROUND FRESH (y 400-800) ================= -->
-          <path d="M165 404 L235 404 L215 469 L185 469 Z" fill="none" stroke="var(--cream)" stroke-width="2"/>
-          <g fill="var(--brown)">
+          <path d="M168 404 C168 396 176 391 186 391 L214 391 C224 391 232 396 232 404 L224 460 C223 466 216 470 208 470 L192 470 C184 470 177 466 176 460 Z" fill="url(#gGlass)" stroke="var(--cream)" stroke-width="1.6" opacity="0.92"/>
+          <g fill="url(#gBean)">
             <g transform="translate(184 420) rotate(-10)"><ellipse rx="9" ry="6"/></g>
             <g transform="translate(211 414) rotate(15)"><ellipse rx="8" ry="5.5"/></g>
             <g transform="translate(198 445) rotate(-20)"><ellipse rx="9" ry="6"/></g>
           </g>
-          <path d="M180 470 L220 470 L214 600 L186 600 Z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
-          <rect x="188" y="600" width="24" height="40" rx="4" fill="none" stroke="var(--brown)" stroke-width="2"/>
-          <g stroke="var(--olive)" stroke-width="1.4" fill="none" stroke-linecap="round">
-            <path d="M175 422c8-10 42-10 50 0"/>
-            <path d="M180 434c6-6 34-6 40 0"/>
-          </g>
+          <path d="M177 470 L223 470 L217 528 L221 528 L221 536 L179 536 L179 528 L183 528 Z" fill="url(#gMetal)" stroke="var(--olive-dark)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M183 536 L217 536 L213 606 C213 616 187 616 187 606 Z" fill="url(#gMetal)" stroke="var(--olive-dark)" stroke-width="1.8" stroke-linejoin="round"/>
+          <rect x="181" y="538" width="38" height="7" rx="2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="0.8"/>
+          <path d="M190 606 L210 606 L206 632 L194 632 Z" fill="url(#gMetal)" stroke="var(--brown)" stroke-width="1.6"/>
+          <path d="M172 634 C172 650 150 658 150 680 C150 706 250 706 250 680 C250 658 228 650 228 634 Z" fill="url(#gMetal)" stroke="var(--brown)" stroke-width="1.8"/>
           <g fill="var(--brown-dark)">
             <circle cx="200" cy="655" r="2.6"/>
-            <circle cx="190" cy="672" r="2.2"/>
-            <circle cx="212" cy="680" r="2.4"/>
-            <circle cx="198" cy="700" r="2"/>
-            <circle cx="185" cy="715" r="2.2"/>
-            <circle cx="208" cy="730" r="2"/>
-            <circle cx="196" cy="755" r="1.8"/>
-            <circle cx="204" cy="780" r="1.8"/>
+            <circle cx="190" cy="665" r="2.2"/>
+            <circle cx="212" cy="668" r="2.4"/>
+            <circle cx="198" cy="678" r="2"/>
+            <circle cx="185" cy="672" r="2.2"/>
+            <circle cx="208" cy="682" r="2"/>
+          </g>
+          <g fill="var(--brown-dark)" opacity="0.7">
+            <circle cx="196" cy="720" r="1.8"/>
+            <circle cx="206" cy="745" r="1.6"/>
+            <circle cx="198" cy="775" r="1.5"/>
           </g>
 
           <!-- ================= BAND 2 — PULLED TO PERFECTION (y 800-1200) ================= -->
-          <path d="M140 800h120v34c0 12-10 22-22 22h-76c-12 0-22-10-22-22V800z" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
-          <rect x="188" y="856" width="24" height="14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
-          <path d="M182 870l-18 28h72l-18-28z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
-          <line x1="176" y1="898" x2="176" y2="1000" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="218" y1="898" x2="218" y2="1000" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M160 1002h74v46c0 10-8 18-18 18h-38c-10 0-18-8-18-18v-46z" fill="none" stroke="var(--brown)" stroke-width="2"/>
-          <rect x="163" y="1030" width="68" height="18" fill="var(--brown-dark)" opacity="0.9"/>
-          <g stroke="var(--gold)" stroke-width="1.1" fill="none" stroke-linecap="round">
-            <path d="M172 1032c14-6 28-6 42 0"/>
-            <path d="M178 1038c10-4 20-4 30 0"/>
+          <ellipse cx="200" cy="960" rx="150" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)"/>
+          <path d="M140 800 L260 800 L260 840 C260 858 246 872 228 872 L172 872 C154 872 140 858 140 840 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="1.8"/>
+          <circle cx="178" cy="826" r="4.2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="1"/>
+          <circle cx="222" cy="826" r="4.2" fill="var(--ink-2)" stroke="var(--olive)" stroke-width="1"/>
+          <path d="M180 872 L220 872 L212 904 L188 904 Z" fill="url(#gSteel)" stroke="var(--brown)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M212 886 L262 880 C272 879 273 893 263 894 L212 898 Z" fill="url(#gSteel)" stroke="var(--brown-dark)" stroke-width="1.2"/>
+          <line x1="176" y1="900" x2="176" y2="1000" stroke="var(--brown-dark)" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="218" y1="900" x2="218" y2="1000" stroke="var(--brown-dark)" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="177" y1="905" x2="177" y2="995" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/>
+          <line x1="219" y1="905" x2="219" y2="995" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/>
+          <path d="M166 1002 L234 1002 L227 1050 C226 1059 219 1066 210 1066 L190 1066 C181 1066 174 1059 173 1050 Z" fill="url(#gGlass)" stroke="var(--cream)" stroke-width="1.4" opacity="0.9"/>
+          <g clip-path="url(#glassClip)">
+            <rect x="163" y="1030" width="74" height="40" fill="url(#gCoffee)"/>
+            <ellipse cx="200" cy="1030" rx="37" ry="5" fill="var(--gold)" opacity="0.55"/>
+          </g>
+          <g stroke="var(--cream)" stroke-width="0.6" opacity="0.3">
+            <line x1="183" y1="1008" x2="180" y2="1058"/>
+            <line x1="200" y1="1004" x2="200" y2="1063"/>
+            <line x1="217" y1="1008" x2="220" y2="1058"/>
           </g>
 
           <!-- ================= BAND 3 — POURED WITH PURPOSE (y 1200-1600) ================= -->
+          <ellipse cx="200" cy="1360" rx="140" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)" opacity="0.8"/>
           <line x1="198" y1="1048" x2="198" y2="1200" stroke="var(--brown-dark)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M172 1200l-14 22h58l-14-22z" fill="none" stroke="var(--brown)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M180 1200 L220 1200 L212 1228 L188 1228 Z" fill="url(#gSteel)" stroke="var(--brown)" stroke-width="1.6" stroke-linejoin="round"/>
           <line x1="168" y1="1222" x2="168" y2="1260" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="200" y1="1222" x2="200" y2="1260" stroke="var(--brown-dark)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M150 1290h100v104c0 16-13 29-29 29h-42c-16 0-29-13-29-29V1290z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
-          <path d="M250 1312c22-4 34 10 34 26s-14 30-36 26" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
-          <clipPath id="mugClipA"><path d="M150 1290h100v104c0 16-13 29-29 29h-42c-16 0-29-13-29-29V1290z"/></clipPath>
-          <rect x="150" y="1310" width="100" height="84" fill="var(--brown-dark)" clip-path="url(#mugClipA)"/>
+          <path d="M152 1288 L248 1288 L248 1380 C248 1400 232 1416 212 1416 L188 1416 C168 1416 152 1400 152 1380 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="2"/>
+          <path d="M248 1312 C272 1310 286 1326 286 1344 C286 1362 272 1378 248 1376 L248 1368 C266 1370 276 1358 276 1344 C276 1330 266 1318 248 1320 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="1.4"/>
+          <ellipse cx="200" cy="1288" rx="48" ry="8" fill="none" stroke="var(--cream)" stroke-width="1.4" opacity="0.55"/>
+          <g clip-path="url(#mugClipA)">
+            <rect x="150" y="1305" width="100" height="90" fill="url(#gCoffee)"/>
+            <ellipse cx="200" cy="1306" rx="48" ry="7" fill="var(--gold)" opacity="0.4"/>
+          </g>
           <line x1="200" y1="1420" x2="200" y2="1600" stroke="var(--olive)" stroke-width="1.5" opacity="0.5"/>
 
           <!-- ================= BAND 4 — SILKY STEAMED MILK (y 1600-2000) ================= -->
-          <g stroke="var(--olive-light)" stroke-width="1.6" fill="none" stroke-linecap="round">
-            <path d="M170 1634c-8-10 8-16 0-28"/>
-            <path d="M190 1628c-8-10 8-16 0-28"/>
-            <path d="M210 1634c-8-10 8-16 0-28"/>
+          <g stroke="var(--olive-light)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55" filter="url(#blurSoft)">
+            <path d="M168 1630c-10-12 9-18 -1-32c-8-11 8-17 0-30"/>
+            <path d="M191 1624c-10-12 9-18 -1-32"/>
+            <path d="M213 1630c-10-12 9-18 -1-32c-8-11 8-17 0-30"/>
           </g>
-          <path d="M150 1654l70-14 8 96c1 14-10 26-24 26h-30c-14 0-24-12-23-26l-1-82z" fill="none" stroke="var(--olive-dark)" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M228 1674c18-2 30 8 28 22-2 12-16 18-30 14" fill="none" stroke="var(--olive-dark)" stroke-width="2"/>
-          <line x1="150" y1="1682" x2="186" y2="1675" stroke="var(--olive-dark)" stroke-width="1.6"/>
-          <ellipse cx="185" cy="1674" rx="26" ry="8" fill="var(--cream)"/>
+          <path d="M156 1652 L232 1648 L226 1748 C225 1758 216 1766 205 1766 L179 1766 C168 1766 159 1758 158 1748 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="2"/>
+          <path d="M228 1650 L248 1634 L232 1660 Z" fill="url(#gSteel)" stroke="var(--olive-dark)" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M156 1666 C134 1664 122 1680 122 1698 C122 1716 134 1730 156 1728" fill="none" stroke="url(#gSteel)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="156" cy="1670" r="2.5" fill="var(--ink-2)"/>
+          <circle cx="156" cy="1724" r="2.5" fill="var(--ink-2)"/>
+          <ellipse cx="193" cy="1654" rx="34" ry="9" fill="var(--cream)"/>
+          <g fill="var(--ink-2)" opacity="0.5">
+            <circle cx="180" cy="1653" r="1.2"/>
+            <circle cx="196" cy="1650" r="1.1"/>
+            <circle cx="208" cy="1655" r="1.2"/>
+            <circle cx="188" cy="1657" r="1"/>
+          </g>
           <path d="M195 1776 L200 2152" stroke="var(--cream)" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
 
           <!-- ================= BAND 5 — OUR SIGNATURE POUR (y 2000-2400) ================= -->
-          <path d="M140 2150h120v104c0 18-15 33-33 33h-54c-18 0-33-15-33-33V2150z" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="2.2"/>
-          <path d="M260 2170c24-4 38 10 38 28s-16 32-40 28" fill="none" stroke="var(--olive-dark)" stroke-width="2.2"/>
-          <ellipse cx="200" cy="2152" rx="60" ry="16" fill="var(--brown-dark)"/>
+          <ellipse cx="200" cy="2210" rx="150" ry="170" fill="url(#gSpot)" filter="url(#blurGlow)"/>
+          <path d="M152 2150 L248 2150 L248 2242 C248 2262 232 2278 212 2278 L188 2278 C168 2278 152 2262 152 2242 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="2"/>
+          <path d="M248 2174 C272 2172 286 2188 286 2206 C286 2224 272 2240 248 2238 L248 2230 C266 2232 276 2220 276 2206 C276 2192 266 2180 248 2182 Z" fill="url(#gCeramic)" stroke="var(--olive-dark)" stroke-width="1.4"/>
+          <g clip-path="url(#mugClipB)">
+            <rect x="150" y="2150" width="100" height="128" fill="url(#gCoffee)"/>
+          </g>
+          <ellipse cx="200" cy="2152" rx="48" ry="8" fill="var(--brown-dark)" stroke="var(--olive-dark)" stroke-width="1.2"/>
           <g fill="none" stroke="var(--cream)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M200 2210c0-24 0-42 0-58"/>
-            <path d="M200 2196c-16-4-26-14-26-26 14 2 24 12 26 26z"/>
-            <path d="M200 2180c16-4 26-14 26-26-14 2-24 12-26 26z"/>
-            <path d="M200 2164c-14-3-22-12-22-22 12 2 20 10 22 22z"/>
-            <path d="M200 2160c14-3 22-12 22-22-12 2-20 10-22 22z"/>
+            <path d="M200 2260c0-24 0-42 0-58"/>
+            <path d="M200 2246c-16-4-26-14-26-26 14 2 24 12 26 26z"/>
+            <path d="M200 2230c16-4 26-14 26-26-14 2-24 12-26 26z"/>
+            <path d="M200 2214c-14-3-22-12-22-22 12 2 20 10 22 22z"/>
+            <path d="M200 2210c14-3 22-12 22-22-12 2-20 10-22 22z"/>
+          </g>
+          <g fill="var(--cream)" opacity="0.35">
+            <circle cx="172" cy="2168" r="1.3"/>
+            <circle cx="228" cy="2172" r="1.2"/>
+            <circle cx="180" cy="2260" r="1.2"/>
+            <circle cx="222" cy="2256" r="1.3"/>
           </g>
         </svg>
       </div>
