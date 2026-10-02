@@ -1,4 +1,6 @@
+# NOTE for site owner: this site is currently blocked from all search engines
+# (placeholder content: address, phone, domain). Switch back to "Allow: /" and
+# restore the Sitemap line below once you're ready to go live and those
+# fields are real.
 User-agent: *
-Allow: /
-
-Sitemap: https://www.theolivebranchhillsboro.com/sitemap.xml
+Disallow: /
