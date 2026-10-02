@@ -3,13 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Olive Branch — Coffee &amp; Café · Hillsboro, TX</title>
-<meta name="description" content="The Olive Branch is a coffee house and café in Hillsboro, Texas, serving espresso, crêpes, and paninis in a space built for community, study, and connection.">
+<title>The Olive Branch | Coffee Shop &amp; Café in Hillsboro, TX</title>
+<meta name="description" content="The Olive Branch is a coffee house and café in Hillsboro, Texas, serving espresso, crêpes, and paninis. Order online or book our private conference room for your next meeting or event.">
+<meta name="robots" content="index, follow">
+<!-- NOTE for site owner: once your live domain is set, update this canonical URL and the og:url / og:image / JSON-LD @id & url below to match. -->
+<link rel="canonical" href="https://www.theolivebranchhillsboro.com/">
 
 <!-- Open Graph -->
-<meta property="og:title" content="The Olive Branch — Coffee &amp; Café">
-<meta property="og:description" content="Coffee, crêpes &amp; community in the heart of Hillsboro, Texas.">
+<meta property="og:title" content="The Olive Branch | Coffee Shop &amp; Café in Hillsboro, TX">
+<meta property="og:description" content="Espresso, crêpes &amp; paninis made with care, plus a private conference room for meetings and events — in the heart of Hillsboro, Texas.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.theolivebranchhillsboro.com/">
+<meta property="og:image" content="https://www.theolivebranchhillsboro.com/img/story/latte-art-photo.webp">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Olive Branch | Coffee Shop &amp; Café in Hillsboro, TX">
+<meta name="twitter:description" content="Espresso, crêpes &amp; paninis made with care, plus a private conference room for meetings and events — in the heart of Hillsboro, Texas.">
+<meta name="twitter:image" content="https://www.theolivebranchhillsboro.com/img/story/latte-art-photo.webp">
 
 <link rel="icon" href="data:,">
 
@@ -18,6 +30,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Alex+Brush&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/styles.css">
+
+<!-- NOTE for site owner: this is placeholder business data (address, phone, domain). Update every field below to match once confirmed — search engines treat this as factual business info. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "@id": "https://www.theolivebranchhillsboro.com/",
+  "name": "The Olive Branch",
+  "url": "https://www.theolivebranchhillsboro.com/",
+  "image": "https://www.theolivebranchhillsboro.com/img/story/latte-art-photo.webp",
+  "telephone": "+1-254-555-0123",
+  "email": "hello@theolivebranchhillsboro.com",
+  "servesCuisine": ["Coffee", "Crêpes", "Paninis"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Street Address]",
+    "addressLocality": "Hillsboro",
+    "addressRegion": "TX",
+    "postalCode": "76645",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "07:00",
+      "closes": "18:00"
+    }
+  ],
+  "amenityFeature": {
+    "@type": "LocationFeatureSpecification",
+    "name": "Private Conference Room",
+    "value": true
+  }
+}
+</script>
 </head>
 <body>
 
@@ -36,11 +85,12 @@
     </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#story">Our Story</a>
       <a href="#menu">Menu</a>
       <a href="#space">The Space</a>
       <a href="#community">Stay in the Loop</a>
-      <a href="#visit" class="main-nav__cta">Visit Us</a>
+      <a href="#visit">Visit</a>
+      <!-- NOTE for site owner: point this at your online ordering platform (Square, Toast, ChowNow, etc.) once set up. -->
+      <a href="#" class="main-nav__cta">Order Online</a>
     </nav>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
@@ -54,87 +104,106 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__content">
-      <p class="eyebrow">Hillsboro, Texas</p>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Coffee House &amp; Café in Hillsboro, Texas</p>
+        <h1 class="hero__title">Great Coffee,<br>Rooted in Community</h1>
+        <p class="hero__sub">Espresso, crêpes &amp; paninis made with care, in a space built for lingering — plus a private conference room for your next meeting, luncheon, or event.</p>
 
-      <div class="hero__mark" aria-hidden="true">
-        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="110" cy="110" r="104" stroke="currentColor" stroke-width="1.25" opacity="0.7"/>
-          <circle cx="110" cy="110" r="94" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
-          <g transform="translate(58 46)">
-            <path d="M6 46C18 18 44 2 74 6 68 34 46 58 12 62 8 58 4 52 6 46Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M60 10c10 6 16 16 12 30-10-2-20-10-22-22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <ellipse cx="88" cy="4" rx="6" ry="3.4" transform="rotate(28 88 4)" fill="currentColor" opacity="0.85"/>
-            <ellipse cx="98" cy="14" rx="5.5" ry="3" transform="rotate(20 98 14)" fill="currentColor" opacity="0.7"/>
-            <ellipse cx="78" cy="-4" rx="5" ry="2.8" transform="rotate(35 78 -4)" fill="currentColor" opacity="0.7"/>
-          </g>
-        </svg>
+        <div class="hero__actions">
+          <!-- NOTE for site owner: point this at your online ordering platform (Square, Toast, ChowNow, etc.) once set up. -->
+          <a href="#" class="btn btn--solid">Order Online</a>
+          <a href="mailto:hello@theolivebranchhillsboro.com?subject=Conference%20Room%20Booking%20Inquiry" class="btn btn--outline">Book the Conference Room</a>
+        </div>
+
+        <div class="hero__info">
+          <div class="hero__info-item">
+            <span class="hero__info-label">Hours</span>
+            <span>Mon–Sat 7am–6pm · Sun Closed</span>
+          </div>
+          <div class="hero__info-item">
+            <span class="hero__info-label">Location</span>
+            <span>Hillsboro, TX 76645</span>
+          </div>
+        </div>
       </div>
 
-      <h1 class="hero__title">
-        <span class="script">the</span>
-        <span class="serif">Olive Branch</span>
-      </h1>
-      <p class="hero__tagline">Rooted in Faith. Serving Our Community.</p>
-      <p class="hero__sub">Coffee, crêpes &amp; paninis made with care — in a space built for lingering. Come study, meet, worship, or just be still a while.</p>
-
-      <div class="hero__actions">
-        <a href="#menu" class="btn btn--solid">See the Menu</a>
-        <a href="#visit" class="btn btn--outline">Plan a Visit</a>
+      <div class="hero__media">
+        <div class="hero__photo-box">
+          <img src="img/story/milk-pour.webp" alt="Steamed milk being poured into coffee to create signature latte art at The Olive Branch in Hillsboro, Texas" width="860" height="480">
+        </div>
       </div>
     </div>
-
-    <a href="#story" class="scroll-cue" aria-label="Scroll to watch us pour">
-      <span>Watch us pour</span>
-      <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.1"/>
-        <circle class="scroll-cue__dot" cx="7" cy="7" r="1.6" fill="currentColor"/>
-      </svg>
-    </a>
   </section>
 
-  <!-- ============ STORY / SCROLLYTELLING LATTE SEQUENCE ============ -->
-  <section class="story" id="story">
-    <div class="story__pin">
-
-      <div class="story__intro">
-        <p class="eyebrow">From Bean to Branch</p>
-        <h2>Every Latte Has a Story</h2>
-        <p class="story__intro-copy">Great, sourced coffee for a tasty pour.</p>
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust-strip">
+    <div class="section-inner trust-strip__inner">
+      <div class="trust-item">
+        <span class="trust-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="2"/><path d="M17 24l5 5 10-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>Locally Roasted</span>
       </div>
-
-      <ol class="story__stage-rail" id="stage-list">
-        <li class="stage-item is-active" data-stage="0"><span class="stage-item__num">01</span><span class="stage-item__label">Pulled to Perfection</span></li>
-        <li class="stage-item" data-stage="1"><span class="stage-item__num">02</span><span class="stage-item__label">Poured with Purpose</span></li>
-        <li class="stage-item" data-stage="2"><span class="stage-item__num">03</span><span class="stage-item__label">Signature Latte Art</span></li>
-      </ol>
-
-      <div class="story__visual">
-
-        <!-- STAGE 0 — ESPRESSO: real footage of the pour, scroll-scrubbed frame by frame -->
-        <div class="story__frame story__frame--photo" data-stage="0">
-          <div class="story__photo-box">
-            <img id="espresso-scrub" class="story__photo-img" src="img/story/espresso/frame-001.webp" alt="Espresso pouring from the portafilter into a cup" width="760" height="428">
-          </div>
-        </div>
-
-        <!-- STAGE 1 — MILK: steamed milk poured with purpose -->
-        <div class="story__frame story__frame--photo" data-stage="1">
-          <div class="story__photo-box">
-            <img class="story__photo-img" src="img/story/milk-pour.webp" alt="Steamed milk being poured to create latte art" width="860" height="480">
-          </div>
-        </div>
-
-        <!-- STAGE 2 — SIGNATURE LATTE ART: the finished olive branch -->
-        <div class="story__frame story__frame--photo" data-stage="2">
-          <div class="story__photo-box">
-            <img class="story__photo-img" src="img/story/latte-art-photo.webp" alt="Finished latte art in the shape of a leaf" width="860" height="480">
-          </div>
-        </div>
+      <div class="trust-item">
+        <span class="trust-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M10 18h22v16c0 6-5 11-11 11h-0c-6 0-11-5-11-11V18z" stroke="currentColor" stroke-width="2"/><path d="M32 20c6-1 10 3 10 8s-5 9-11 8" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <span>Made Fresh Daily</span>
       </div>
+      <div class="trust-item">
+        <span class="trust-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="16" width="32" height="16" rx="4" stroke="currentColor" stroke-width="2"/><path d="M13 24h22" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>Free Wi-Fi</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="12" width="30" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 34v4M32 34v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 20h18" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <span>Conference Room Available</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="story__caption">
-        <p class="story__caption-text" id="story-caption">Great, sourced coffee for a tasty pour — pulled to perfection, nine bars of pressure and twenty-five seconds of patience.</p>
+  <!-- ============ HOW WE POUR ============ -->
+  <section class="pour-strip" id="pour">
+    <div class="section-inner">
+      <p class="eyebrow">From Bean to Branch</p>
+      <h2>Great, Sourced Coffee for a Tasty Pour</h2>
+      <p class="section-lede">Pulled to perfection, poured with purpose, finished with our signature latte art.</p>
+
+      <div class="pour-grid">
+        <figure class="pour-card">
+          <div class="pour-card__photo">
+            <img src="img/story/espresso-pour.webp" alt="Espresso pouring from the portafilter into a cup" width="760" height="428" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="pour-card__num">01</span>
+            <h3>Pulled to Perfection</h3>
+            <p>Nine bars of pressure, twenty-five seconds of patience.</p>
+          </figcaption>
+        </figure>
+        <figure class="pour-card">
+          <div class="pour-card__photo">
+            <img src="img/story/milk-pour.webp" alt="Steamed milk being poured to create latte art" width="860" height="480" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="pour-card__num">02</span>
+            <h3>Poured with Purpose</h3>
+            <p>Nothing wasted, nothing rushed.</p>
+          </figcaption>
+        </figure>
+        <figure class="pour-card">
+          <div class="pour-card__photo">
+            <img src="img/story/latte-art-photo.webp" alt="Finished latte art in the shape of an olive branch leaf" width="860" height="480" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="pour-card__num">03</span>
+            <h3>Signature Latte Art</h3>
+            <p>An olive branch, poured by hand, just for you.</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -182,6 +251,9 @@
           <p>Pumpkin in October, peppermint in December, something bright every spring — our seasonal menu follows the calendar.</p>
         </div>
       </div>
+
+      <!-- NOTE for site owner: point this at your online ordering platform (Square, Toast, ChowNow, etc.) once set up. -->
+      <a href="#" class="btn btn--solid menu__order-cta">Order Online</a>
     </div>
   </section>
 
@@ -193,9 +265,10 @@
       <p class="section-lede">Plenty of room to spread out — whether you're here for an hour or an afternoon.</p>
 
       <div class="space-grid">
-        <div class="space-card">
+        <div class="space-card space-card--accent">
           <h3>Conference Room</h3>
           <p>Book our private meeting room for luncheons, team meetings, or events.</p>
+          <a href="mailto:hello@theolivebranchhillsboro.com?subject=Conference%20Room%20Booking%20Inquiry" class="space-card__cta">Book the Conference Room →</a>
         </div>
         <div class="space-card">
           <h3>Indoor Seating</h3>
@@ -246,42 +319,68 @@
       <p class="eyebrow eyebrow--light">Come See Us</p>
       <h2 class="visit__title">Visit The Olive Branch</h2>
 
-      <div class="visit-grid">
-        <div class="visit-block">
-          <h3>Location</h3>
-          <!-- NOTE for site owner: replace with your exact street address -->
-          <p>[Street Address]<br>Hillsboro, TX 76645</p>
+      <div class="visit-layout">
+        <div class="visit-grid">
+          <div class="visit-block">
+            <h3>Location</h3>
+            <!-- NOTE for site owner: replace with your exact street address -->
+            <p>[Street Address]<br>Hillsboro, TX 76645</p>
+          </div>
+          <div class="visit-block">
+            <h3>Hours</h3>
+            <!-- NOTE for site owner: confirm final hours -->
+            <p>Mon–Sat: 7am – 6pm<br>Sun: Closed</p>
+          </div>
+          <div class="visit-block">
+            <h3>Contact</h3>
+            <!-- NOTE for site owner: replace with your real phone / email -->
+            <p>(254) 555-0123<br>hello@theolivebranchhillsboro.com</p>
+          </div>
         </div>
-        <div class="visit-block">
-          <h3>Hours</h3>
-          <!-- NOTE for site owner: confirm final hours -->
-          <p>Mon–Sat: 7am – 6pm<br>Sun: Closed</p>
-        </div>
-        <div class="visit-block">
-          <h3>Contact</h3>
-          <!-- NOTE for site owner: replace with your real phone / email -->
-          <p>(254) 555-0123<br>hello@theolivebranchhillsboro.com</p>
+
+        <!-- NOTE for site owner: replace the map query below with your exact address once confirmed, so the pin lands in the right spot. -->
+        <div class="visit-map">
+          <iframe
+            title="Map to The Olive Branch in Hillsboro, Texas"
+            src="https://maps.google.com/maps?q=Hillsboro%2C%20TX%2076645&z=14&output=embed"
+            width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <span class="brand brand--footer">
-          <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.25"/><path d="M14 30c4-10 12-16 20-14-2 8-8 15-18 17-1-1-2-2-2-3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="site-footer__col site-footer__col--brand">
+          <span class="brand brand--footer">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.25"/><path d="M14 30c4-10 12-16 20-14-2 8-8 15-18 17-1-1-2-2-2-3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="brand__text">The Olive Branch</span>
           </span>
-          <span class="brand__text">The Olive Branch</span>
-        </span>
-        <p class="site-footer__copy">© 2026 The Olive Branch Coffee &amp; Café · Hillsboro, Texas</p>
+          <p>Coffee house &amp; café in Hillsboro, Texas.</p>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Quick Links</h3>
+          <a href="#menu">Menu</a>
+          <a href="#space">The Space</a>
+          <a href="#community">Stay in the Loop</a>
+          <a href="#visit">Visit</a>
+        </div>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Follow Us</h3>
+          <!-- NOTE for site owner: replace # with your real Instagram / Facebook URLs -->
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
       </div>
+      <p class="site-footer__copy">© 2026 The Olive Branch Coffee &amp; Café · Hillsboro, Texas</p>
     </footer>
   </section>
 
 </main>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
